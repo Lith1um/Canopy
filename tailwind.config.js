@@ -19,6 +19,9 @@ module.exports = {
       borderWidth: {
         DEFAULT: '1px'
       },
+      gridTemplateColumns: {
+        'auto': 'repeat(auto-fit, minmax(0, 1fr))'
+      },
       default: {
         primary: {
           ...colors.sky,
@@ -39,6 +42,7 @@ module.exports = {
     },
   },
   plugins: [
-    require(path.resolve(__dirname, ('src/app/tailwind/plugins/icon-size'))),
+    require('@tailwindcss/typography'),
+    require(path.resolve(__dirname, ('src/app/tailwind/icon-size'))),
   ],
 }

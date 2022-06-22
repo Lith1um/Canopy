@@ -16,14 +16,15 @@ export class AppComponent {
       title: 'Home',
       type: 'item',
       url: '/',
+      exactMatch: true,
       matIcon: 'home'
     },
     {
-      id: 'profile',
-      title: 'Profile',
+      id: 'form',
+      title: 'Form Example',
       type: 'item',
-      url: 'profile',
-      matIcon: 'account_circle'
+      url: 'form',
+      matIcon: 'edit_note'
     },
     {
       id: 'settings',

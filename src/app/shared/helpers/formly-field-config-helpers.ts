@@ -169,6 +169,7 @@ export function fcToggle(
     key,
     type: 'toggle',
     templateOptions: {
+      color: 'primary',
       label,
       required,
       disabled,
@@ -192,7 +193,7 @@ export function fcToggle(
 ////////// Select Params
 ////////////////////////////////////////////////////////////////////////////////////////
 interface SelectParams extends BaseParams {
-  options: Observable<IdNamePairModel[]>;
+  options: IdNamePairModel[];
   valueProp?: string | ((item: any) => any);
   labelProp?: string | ((item: any) => any);
   emptyOption?: IdNamePairModel;
@@ -238,7 +239,7 @@ export function fcSelect(
       label,
       options: !emptyOption
         ? options
-        : options.pipe(map((options) => [emptyOption, ...options])),
+        : [emptyOption, ...options],
       required,
       disabled,
       placeholder,
@@ -621,6 +622,7 @@ export function fcColorPicker(
     className: `mat-no-container ${className}`,
     key,
     type: 'color-picker',
+    defaultValue: '#ffffff',
     templateOptions: {
       label,
       required,

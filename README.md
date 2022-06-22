@@ -14,6 +14,7 @@ A project designed to make building new apps in angular as easy as possible.
 
 ## To-Do
 
+ - dialogs
  - mobile support
  - form helpers (Formly?)
  - login page
