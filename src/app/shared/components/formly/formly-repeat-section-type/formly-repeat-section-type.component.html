@@ -1,0 +1,19 @@
+<ng-container *ngFor="let field of field.fieldGroup; let i = index; let l = last">
+  <div class="grid grid-cols-[1fr_auto_auto] items-center w-full gap-1">
+    <formly-field [field]="field"></formly-field>
+    <div class="border-l ml-2 h-full"></div>
+    <button mat-icon-button color="warn" (click)="remove(i)">
+      <mat-icon>delete</mat-icon>
+    </button>
+  </div>
+  <div *ngIf="!l" class="text-center text-secondary mb-2">. . .</div>
+</ng-container>
+<button
+  mat-flat-button
+  color="primary"
+  style="margin-top: 0 !important"
+  [disabled]="!formControl.valid"
+  (click)="add(undefined, to.initialModel ?? {})">
+  {{ to.addButtonText }}
+</button>
+

@@ -1,8 +1,17 @@
 @tailwind base;
+
+@layer base {
+  html {
+    @apply text-gray-800;
+  } 
+}
+
 @tailwind components;
 @tailwind utilities;
 
 @import './assets/fonts/inter';
+@import 'app/scss/angular-material';
+@import 'app/scss/ngx-colors';
 
 html, body {
   height: 100%;
@@ -12,3 +21,4 @@ html, body {
 body {
   margin: 0;
 }
+

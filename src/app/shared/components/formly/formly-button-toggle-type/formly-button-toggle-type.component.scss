@@ -1,0 +1,9 @@
+.error-messages {
+  @apply mt-1 text-xs;
+}
+
+:host {
+  ::ng-deep.mat-button-toggle-label-content {
+    @apply p-0 #{'!important'};
+  }
+}

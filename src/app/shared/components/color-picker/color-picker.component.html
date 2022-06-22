@@ -1,0 +1,18 @@
+<div
+  *ngIf="!isDisabled; else disabledColorPicker"
+  class="color-picker"
+  [style.background]="value"
+  ngx-colors-trigger
+  acceptLabel="SELECT"
+  colorsAnimation="popup"
+  [hideColorPicker]="true"
+  [palette]="colorPalette"
+  [hideTextInput]="true"
+  (change)="writeValue($event)"
+></div>
+<ng-template #disabledColorPicker>
+  <div
+    class="color-picker"
+    [style.background]="value">
+  </div>
+</ng-template>

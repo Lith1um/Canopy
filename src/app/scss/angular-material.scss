@@ -1,0 +1,947 @@
+/* ----------------------------------------------------------------------------------------------------- */
+/*  @ Form fields
+/* ----------------------------------------------------------------------------------------------------- */
+
+/* We only uses 'fill' style form fields and therefore */
+/* only provides fixes and tweaks for that style */
+.mat-default, .mat-form-field.mat-form-field-appearance-fill {
+
+  @apply leading-tight #{'!important'};
+
+  &.mat-form-field-type-checkbox {
+    
+    .mat-form-field-wrapper {
+
+        @apply mt-6 #{'!important'};
+
+        .mat-form-field-flex {
+            @apply items-center #{'!important'};
+        }
+    }
+  }
+
+  /* Disabled */
+  &.mat-form-field-disabled {
+      opacity: 0.7 !important;
+
+      .mat-form-field-wrapper {
+
+        .mat-form-field-flex, .mat-form-field-flex * {
+            @apply cursor-not-allowed #{'!important'};
+        }
+    }
+  }
+
+  /* Invalid */
+  &.mat-form-field-invalid {
+
+      .mat-form-field-wrapper {
+
+          /* Border color */
+          .mat-form-field-flex {
+              @apply border-red-500 #{'!important'};
+
+              .mat-form-field-infix {
+
+                .mat-form-field-label-wrapper {
+
+                    .mat-form-field-label {
+
+                        .mat-form-field-required-marker {
+                            @apply text-red-700 #{'!important'};
+                        }
+                    }
+                }
+            }
+          }
+      }
+  }
+
+  /* Focused */
+  &.mat-focused {
+
+      .mat-form-field-wrapper {
+
+          /* Background color */
+          .mat-form-field-flex {
+              @apply bg-white #{'!important'};
+          }
+      }
+  }
+
+  /* Focused and valid fields */
+  &.mat-focused:not(.mat-form-field-invalid) {
+
+      .mat-form-field-wrapper {
+
+          /* Border color */
+          .mat-form-field-flex {
+              @apply border-sky-500 #{'!important'};
+
+              .mat-form-field-infix {
+
+                .mat-form-field-label-wrapper {
+
+                    .mat-form-field-label {
+
+                        .mat-form-field-required-marker {
+                            @apply text-sky-500 #{'!important'};
+                        }
+                    }
+                }
+            }
+          }
+      }
+  }
+
+  /* Disable floating mat-label */
+  &.mat-form-field-has-label.mat-form-field-can-float.mat-form-field-should-float {
+
+      .mat-form-field-label-wrapper {
+
+          .mat-form-field-label {
+              width: 100% !important;
+              transform: none !important;
+          }
+      }
+  }
+
+  /* Remove the default arrow for native select */
+  &.mat-form-field-type-mat-native-select {
+
+      .mat-form-field-infix {
+
+          select {
+              top: auto;
+              margin-top: 0;
+              margin-bottom: 0;
+              padding-top: 0;
+              padding-right: 18px;
+              background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%2364748B' viewBox='0 0 24 24'%3E%3Cpath d='M7 10l5 5 5-5H7z'/%3E%3C/svg%3E");
+              background-repeat: no-repeat;
+              background-position: right -7px center;
+              background-size: 24px;
+
+              .dark & {
+                  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%2397a6ba' viewBox='0 0 24 24'%3E%3Cpath d='M7 10l5 5 5-5H7z'/%3E%3C/svg%3E");
+              }
+          }
+
+          &:after {
+              display: none;
+          }
+      }
+  }
+
+  /* Adjustments for mat-label */
+  &.mat-form-field-has-label {
+
+      .mat-form-field-wrapper {
+          margin-top: 24px;
+      }
+  }
+
+  button:not([mat-icon-button]):not(.mat-button-toggle-button) {
+    @apply h-10 mt-6 leading-9 #{'!important'};
+  }
+
+  .mat-datepicker-toggle {
+      svg {
+          @apply inline #{'!important'};
+      }
+  }
+
+  /* Default style tweaks and enhancements */
+  .mat-form-field-wrapper {
+      margin-bottom: 16px;
+      padding-bottom: 0;
+
+      .mat-form-field-flex {
+          position: relative;
+          display: flex;
+          align-items: stretch;
+          min-height: 40px;
+          border-radius: 6px;
+          padding: 0 16px;
+          border-width: 1px;
+          background-color: white;
+          @apply border-gray-300 transition-all #{'!important'};
+
+          & > * {
+              @apply transition-all;
+          }
+
+          .dark & {
+              background-color: rgba(0, 0, 0, 0.05) !important;
+              @apply border-gray-500 #{'!important'};
+          }
+
+          .mat-form-field-prefix {
+
+              > .mat-checkbox {
+                  @apply ml-0 flex #{'!important'};
+              }
+
+              > .mat-icon {
+                  margin-right: 12px;
+              }
+
+              > .mat-icon-button {
+                  margin-left: -6px;
+                  margin-right: 12px;
+              }
+
+              > .mat-select {
+                  margin-right: 10px;
+              }
+
+              > .mat-datepicker-toggle {
+                  margin-left: -8px;
+              }
+
+              > *:not(.mat-icon):not(.mat-icon-button):not(.mat-select):not(.mat-datepicker-toggle) {
+                  margin-right: 12px;
+              }
+          }
+
+          .mat-form-field-suffix {
+
+              > .mat-icon {
+                  margin-left: 12px;
+              }
+
+              > .mat-icon-button {
+                  margin-left: 12px;
+                  margin-right: -6px;
+              }
+
+              > .mat-select {
+                  margin-left: 10px;
+              }
+
+              > .mat-datepicker-toggle {
+                  margin-right: -8px;
+              }
+          }
+
+          .mat-form-field-prefix,
+          .mat-form-field-suffix {
+              display: inline-flex;
+              align-items: center;
+              justify-content: center;
+              @apply text-gray-400 #{'!important'};
+
+              .mat-icon-button {
+                  width: 32px;
+                  min-width: 32px;
+                  height: 32px;
+                  min-height: 32px;
+              }
+
+              .mat-icon,
+              .mat-icon-button:not(.mat-button-disabled),
+              .mat-select-value {
+                  @apply text-gray-400;
+              }
+
+              /* Remove the margins from the mat-icon if it's inside a button */
+              /* Force the icon size to 24 */
+              .mat-button,
+              .mat-raised-button,
+              .mat-icon-button,
+              .mat-stroked-button,
+              .mat-flat-button,
+              .mat-fab,
+              .mat-mini-fab {
+
+                  .mat-icon {
+                      margin: 0 !important;
+                      @apply icon-size-6;
+                  }
+              }
+
+              /* Datepicker default icon size */
+              .mat-datepicker-toggle-default-icon {
+                  @apply icon-size-6;
+              }
+
+              /* Make mat-select usable as */
+              /* prefix and suffix */
+              .mat-select {
+                  display: flex;
+                  align-items: center;
+
+                  .mat-select-trigger {
+                      display: flex;
+                      align-items: center;
+
+                      .mat-select-value {
+                          display: flex;
+                          max-width: none;
+
+                          mat-select-trigger {
+
+                              .mat-icon {
+                                  margin: 0 !important;
+                              }
+                          }
+                      }
+
+                      .mat-select-arrow-wrapper {
+                          display: flex;
+                          align-items: center;
+                          transform: none;
+                          margin-left: 4px;
+
+                          .mat-select-arrow {
+                              min-height: 0;
+                          }
+                      }
+                  }
+              }
+          }
+
+          .mat-form-field-infix {
+              position: static;
+              cursor: text;
+              display: flex;
+              align-items: center;
+              width: 88px;
+              padding: 0;
+              border: 0;
+
+              > *:not(textarea):not(formly-field-mat-toggle):not(mat-datepicker) {
+                flex: 1;
+                height: 100%;
+                box-sizing: border-box;
+                overflow: hidden;
+              }
+
+              > formly-field-mat-toggle {
+                  width: 100%;
+              }
+
+              .mat-input-element {
+                  padding: 11px 0;
+              }
+
+              /* Textarea */
+              textarea.mat-input-element {
+                  display: flex;
+                  align-self: stretch;
+                  height: auto;
+                  margin: 6px 0 5px 0;
+                  padding: 4px 0 !important;
+                  transform: none;
+                  line-height: 1.125 !important;
+              }
+
+              /* Select */
+              .mat-select {
+                  display: inline-flex;
+                  height: 100%;
+
+                  .mat-select-trigger {
+                      display: inline-flex;
+                      align-items: center;
+                      width: 100%;
+                      height: 100%;
+
+                      .mat-select-value {
+                          @apply -mt-0.5;
+                          display: flex;
+                          position: relative;
+                          max-width: none;
+
+                          .mat-select-placeholder {
+                              color: rgba(0, 0, 0, 0.42) !important;
+                              -webkit-text-fill-color: rgba(0, 0, 0, 0.42) !important;
+                          }
+
+                          .mat-select-value-text {
+                              display: inline-flex;
+
+                              > * {
+                                  overflow: hidden;
+                                  white-space: nowrap;
+                                  text-overflow: ellipsis;
+                              }
+                          }
+                      }
+                  }
+
+                  .mat-select-arrow-wrapper {
+                      transform: translateY(0);
+
+                      .mat-select-arrow {
+                          margin: 0 0 0 8px;
+                      }
+                  }
+              }
+
+              /* Chips */
+              .mat-chip-list {
+
+                  .mat-chip-input {
+                      margin: 0 0 0 8px;
+                  }
+              }
+
+              .mat-form-field-label-wrapper {
+                  top: -23px;
+                  cursor: default;
+                  height: auto;
+                  padding-top: 0;
+                  overflow: visible;
+                  pointer-events: auto;
+
+                  .mat-form-field-label {
+                      position: relative;
+                      top: 0;
+                      margin-top: 0;
+                      backface-visibility: hidden;
+                      transition: none;
+                      font-weight: 500;
+                      @apply text-gray-800 #{'!important'};
+                  }
+              }
+          }
+      }
+
+      /* Remove the underline */
+      .mat-form-field-underline {
+          display: none;
+      }
+
+      /* Subscript tweaks */
+      .mat-form-field-subscript-wrapper {
+          position: relative;
+          top: auto;
+          padding: 0;
+          margin-top: 0;
+          font-size: 12px;
+
+          > div {
+              display: contents; /* Remove the div from flow to stop the subscript animation */
+          }
+
+          .mat-error,
+          .mat-hint {
+              display: block;
+              margin-top: 2px;
+          }
+
+          .mat-hint {
+              @apply text-gray-400 #{'!important'};
+          }
+      }
+  }
+
+  /* Removes subscript space */
+  &.mat-no-subscript {
+
+      .mat-form-field-wrapper {
+          padding-bottom: 0 !important;
+          margin-bottom: 0 !important;
+
+          .mat-form-field-subscript-wrapper {
+              display: none !important;
+              height: 0 !important;
+          }
+      }
+  }
+
+  /* Dense */
+  &.mat-dense {
+
+    mat-button-toggle-group,
+    .color-picker {
+        @apply h-8 #{'!important'};
+    }
+
+    button:not([mat-icon-button]):not(.mat-button-toggle-button) {
+        @apply h-8 mt-4 leading-7 #{'!important'};
+    }
+
+      .mat-form-field-wrapper {
+
+          .mat-form-field-flex {
+              min-height: 32px;
+              padding: 0 12px;
+
+              .mat-form-field-prefix,
+              .mat-form-field-suffix {
+
+                  .mat-icon-button {
+                      width: 28px;
+                      min-width: 28px;
+                      height: 28px;
+                      min-height: 28px;
+                  }
+              }
+
+              .mat-form-field-prefix {
+
+                  > .mat-icon-button {
+                      margin-left: -6px;
+                      margin-right: 12px;
+                  }
+              }
+
+              .mat-form-field-suffix {
+
+                  > .mat-icon-button {
+                      margin-left: 12px;
+                      margin-right: -6px;
+                  }
+              }
+
+              .mat-form-field-infix {
+
+                  .mat-input-element {
+                      padding: 7px 0;
+                  }
+              }
+          }
+      }
+  }
+}
+
+/* Fix the outline appearance */
+.mat-form-field.mat-form-field-appearance-outline {
+
+  .mat-form-field-wrapper {
+
+      .mat-form-field-flex {
+
+          .mat-form-field-outline {
+              @apply text-gray-300 #{'!important'};
+          }
+      }
+  }
+}
+
+.mat-no-container {
+    &.mat-form-field.mat-form-field-appearance-fill,
+    .mat-form-field.mat-form-field-appearance-fill {
+      
+        .mat-form-field-wrapper {
+    
+            /* Border color */
+            .mat-form-field-flex {
+                @apply border-0 p-0 bg-transparent #{'!important'};
+            }
+        }
+    }
+}
+
+/* Removes subscript space */
+.mat-no-subscript {
+
+    &.mat-form-field.mat-form-field-appearance-fill,
+    .mat-form-field.mat-form-field-appearance-fill {
+
+        .mat-form-field-wrapper {
+            padding-bottom: 0 !important;
+            margin-bottom: 0 !important;
+
+            .mat-form-field-subscript-wrapper {
+                display: none !important;
+                height: 0 !important;
+            }
+        }
+    }
+}
+
+/* dense fields */
+.mat-dense {
+
+    mat-button-toggle-group,
+    .color-picker {
+        @apply h-8 #{'!important'};
+    }
+
+    button:not([mat-icon-button]):not(.mat-button-toggle-button) {
+        @apply h-8 mt-4 leading-7 #{'!important'};
+    }
+
+    &.mat-form-field.mat-form-field-appearance-fill,
+    .mat-form-field.mat-form-field-appearance-fill {
+
+        /* Adjustments for mat-label */
+        &.mat-form-field-has-label {
+
+            .mat-form-field-wrapper {
+                margin-top: 16px;
+            }
+        }
+
+        .mat-form-field-wrapper {
+            @apply mb-1 pb-0;
+
+            .mat-form-field-flex {
+                min-height: 32px;
+                padding: 0 12px;
+
+                .mat-form-field-prefix,
+                .mat-form-field-suffix {
+
+                    .mat-icon-button {
+                        width: 28px;
+                        min-width: 28px;
+                        height: 28px;
+                        min-height: 28px;
+                    }
+                }
+
+                .mat-form-field-prefix {
+
+                    > .mat-icon-button {
+                        margin-left: -6px;
+                        margin-right: 12px;
+                    }
+                }
+
+                .mat-form-field-suffix {
+
+                    > .mat-icon-button {
+                        margin-left: 12px;
+                        margin-right: -6px;
+                    }
+                }
+
+                .mat-form-field-infix {
+                    textarea.mat-input-element {
+                        margin: 4px 0 3px 0 !important;
+                    }
+
+                    .mat-form-field-label-wrapper {
+                        @apply -top-4 text-xs;
+                    }
+
+                    .mat-input-element {
+                        padding: 7px 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Inline fields */
+.mat-inline {
+
+    mat-button-toggle-group,
+    .color-picker {
+        @apply h-8 ml-2 #{'!important'};
+    }
+
+    button:not([mat-icon-button]):not(.mat-button-toggle-button) {
+        @apply h-8 mt-4 leading-7 #{'!important'};
+    }
+
+    .mat-checkbox {
+        @apply ml-2 #{'!important'};
+    }
+
+    .color-picker {
+        width: calc(100% - 12px) !important;
+    }
+
+    &.mat-form-field.mat-form-field-appearance-fill,
+    .mat-form-field.mat-form-field-appearance-fill {
+
+        &.mat-form-field-type-checkbox {
+    
+            .mat-form-field-wrapper {
+                @apply mt-4 #{'!important'};
+            }
+        }
+    
+        &.mat-focused {
+            .mat-form-field-wrapper {
+
+                .mat-form-field-flex {
+                    @apply border-sky-500 bg-white #{'!important'};
+
+                    &:hover {
+                        @apply border-sky-500 bg-white #{'!important'};
+
+                        .mat-form-field-infix {
+
+                            .mat-form-field-label-wrapper {
+            
+                                .mat-form-field-label {
+            
+                                    .mat-form-field-required-marker {
+                                        @apply text-sky-500 #{'!important'};
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .mat-form-field-prefix,
+                    .mat-form-field-suffix,
+                    .mat-select-arrow-wrapper {
+                        &.mat-icon,
+                        mat-datepicker-toggle {
+                            @apply opacity-100;
+                        }
+
+                        & > *:not(mat-checkbox) {
+                            @apply opacity-100;
+                        }
+                    }
+                }
+            }
+        }
+
+        &.mat-form-field-invalid {
+            .mat-form-field-wrapper {
+                .mat-form-field-flex {
+                    @apply border-red-500 bg-white #{'!important'};
+
+                    &:hover {
+                        @apply border-red-500 #{'!important'};
+
+                        .mat-form-field-infix {
+
+                            .mat-form-field-label-wrapper {
+            
+                                .mat-form-field-label {
+            
+                                    .mat-form-field-required-marker {
+                                        @apply text-red-700 #{'!important'};
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        /* Adjustments for mat-label */
+        &.mat-form-field-has-label {
+
+            .mat-form-field-wrapper {
+                margin-top: 16px;
+            }
+        }
+
+        .mat-form-field-wrapper {
+            @apply mb-1 pb-0 #{'!important'};
+
+            .mat-form-field-subscript-wrapper {
+                @apply pl-2 #{'!important'};
+            }
+
+            .mat-form-field-flex {
+                @apply border-transparent bg-transparent #{'!important'};
+                min-height: 32px;
+                padding: 0 8px;
+
+                &:hover {
+                    @apply border-gray-300 bg-white #{'!important'};
+
+                    .mat-form-field-prefix,
+                    .mat-form-field-suffix,
+                    .mat-select-arrow-wrapper {
+                        &.mat-icon,
+                        mat-datepicker-toggle {
+                            @apply opacity-100;
+                        }
+
+                        & > *:not(mat-checkbox) {
+                            @apply opacity-100;
+                        }
+                    }
+
+                    .mat-form-field-infix {
+
+                        .mat-form-field-label-wrapper {
+        
+                            .mat-form-field-label {
+        
+                                .mat-form-field-required-marker {
+                                    @apply text-current #{'!important'};
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .mat-form-field-prefix,
+                .mat-form-field-suffix,
+                .mat-select-arrow-wrapper {
+                    &.mat-icon,
+                    mat-datepicker-toggle {
+                        @apply opacity-0;
+                    }
+
+                    & > *:not(mat-checkbox) {
+                        @apply opacity-0;
+                    }
+                }
+
+                .mat-form-field-prefix,
+                .mat-form-field-suffix {
+                    .mat-icon-button {
+                        width: 28px;
+                        min-width: 28px;
+                        height: 28px;
+                        min-height: 28px;
+                    }
+                }
+
+                .mat-form-field-prefix {
+
+                    > .mat-icon-button {
+                        margin-left: -6px;
+                        margin-right: 12px;
+                    }
+                }
+
+                .mat-form-field-suffix {
+
+                    > .mat-icon-button {
+                        margin-left: 12px;
+                        margin-right: -6px;
+                    }
+                }
+
+                .mat-form-field-infix {
+
+                    textarea.mat-input-element {
+                        margin: 4px 0 3px 0 !important;
+                    }
+
+                    .mat-form-field-label-wrapper {
+                        
+                        @apply pl-2 -top-4 text-xs;
+
+                        .mat-form-field-label {
+                            @apply text-gray-500 #{'!important'};
+
+                            .mat-form-field-required-marker {
+                                @apply text-transparent;
+                            }
+                        }
+                    }
+
+                    .mat-input-element {
+                        padding: 7px 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// This fixes https://github.com/angular/components/issues/4609
+.mat-dialog-override {
+    mat-dialog-container,
+    .mat-dialog-container {
+        @apply p-0 rounded-lg;
+        height: unset;
+
+        > :first-child {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        mat-dialog-title,
+        *[mat-dialog-title] {
+            @apply px-4 py-3 m-0;
+        }
+
+        mat-dialog-content,
+        *[mat-dialog-content] {
+            max-height: unset;
+            @apply m-0 p-4 flex-grow min-h-0;
+        }
+
+        mat-dialog-actions,
+        *[mat-dialog-actions] {
+            @apply box-border border-t m-0 py-3 px-4 flex w-full items-center;
+            min-height: unset !important;
+
+            .mat-button-base+.mat-button-base {
+                @apply ml-0;
+            }
+        }
+    }
+}
+
+.mat-slide-toggle-content {
+    @apply truncate #{'!important'};
+}
+
+// supports multiline checkbox text
+.mat-checkbox-layout{
+    @apply w-full whitespace-normal break-all #{'!important'};
+}
+
+.mat-checkbox-inner-container{
+    @apply mt-1 #{'!important'};
+}
+
+.mat-checkbox-inner-container-no-side-margin {
+    @apply mt-0 #{'!important'};
+}
+
+.mat-checkbox-label {
+    @apply w-full #{'!important'};
+}
+
+.mat-tooltip {
+    @apply leading-normal;
+}
+
+.mat-chip-list-wrapper {
+    @apply m-0 -ml-1 #{'!important'};
+}
+
+.mat-tab-body-wrapper {
+    @apply flex-1 #{'!important'};
+}
+
+// Icons
+.material-icons-filled,
+.material-icons.material-icons--filled {
+    font-family: 'Material Icons' !important;
+}
+
+button:not([mat-icon-button]) {
+    .mat-button-wrapper {
+        > .mat-icon:first-child {
+            @apply -ml-1 #{'!important'};
+        }
+    }
+}
+
+.mat-button-wrapper {
+    & > .mat-icon {
+        @apply -mt-[2px] #{'!important'};
+    }
+}
+
+app-layout {
+    .mat-drawer-inner-container {
+        @apply absolute #{'!important'};
+    }
+}
+
+mat-calendar {
+    .mat-calendar-controls {
+        @apply mt-2 #{'!important'};
+    }
+}
+
+cdk-virtual-scroll-viewport.virtual-scroll-vertical {
+    .cdk-virtual-scroll-content-wrapper {
+        width: 100%;
+    }
+}

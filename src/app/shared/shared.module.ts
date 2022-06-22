@@ -4,6 +4,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { MaterialModule } from '../material.module';
 import {
+  ColorPickerComponent,
+  FormlyButtonToggleTypeComponent,
+  FormlyColorTypeComponent,
+  FormlyRepeatSectionTypeComponent,
+  FormlyTimeTypeComponent,
   HorizontalNavigationBasicItemComponent,
   HorizontalNavigationBranchItemComponent,
   HorizontalNavigationComponent,
@@ -15,15 +20,35 @@ import {
   VerticalNavigationSeparatorComponent
 } from '@shared/components';
 
+// Formly
+import { FormlyMatToggleModule } from '@ngx-formly/material/toggle';
+import { FormlyMatDatepickerModule } from '@ngx-formly/material/datepicker';
+import { FormlyMaterialModule } from '@ngx-formly/material';
+import { FormlyModule } from '@ngx-formly/core';
+import { FormlySelectModule } from '@ngx-formly/core/select';
+
+import { NgxColorsModule } from 'ngx-colours';
+import { TimeMaskDirective } from '@shared/directives';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
     RouterModule,
-    MaterialModule
+    MaterialModule,
+    
+    NgxColorsModule,
+
+    // Formly
+    FormlyMatToggleModule,
+    FormlyMatDatepickerModule,
+    FormlyMaterialModule,
+    FormlySelectModule,
+    FormlyModule,
   ],
   declarations: [
+    ColorPickerComponent,
     HorizontalNavigationComponent,
     HorizontalNavigationBasicItemComponent,
     HorizontalNavigationBranchItemComponent,
@@ -32,7 +57,13 @@ import {
     VerticalNavigationBasicItemComponent,
     VerticalNavigationCollapsibleItemComponent,
     VerticalNavigationGroupItemComponent,
-    VerticalNavigationSeparatorComponent
+    VerticalNavigationSeparatorComponent,
+    FormlyButtonToggleTypeComponent,
+    FormlyColorTypeComponent,
+    FormlyRepeatSectionTypeComponent,
+    FormlyTimeTypeComponent,
+
+    TimeMaskDirective
   ],
   exports: [
     CommonModule,
@@ -41,6 +72,14 @@ import {
     RouterModule,
     MaterialModule,
 
+    // Formly
+    FormlyMatToggleModule,
+    FormlyMatDatepickerModule,
+    FormlyMaterialModule,
+    FormlySelectModule,
+    FormlyModule,
+
+    ColorPickerComponent,
     HorizontalNavigationComponent,
     HorizontalNavigationBasicItemComponent,
     HorizontalNavigationBranchItemComponent,

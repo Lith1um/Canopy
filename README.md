@@ -6,6 +6,11 @@ A project designed to make building new apps in angular as easy as possible.
 
  - Angular Material
  - TailwindCSS
+ - Moment
+ - ngx-Formly
+ - Lodash
+ - Moment
+ - ngx-Colours
 
 ## To-Do
 
