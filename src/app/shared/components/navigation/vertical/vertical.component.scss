@@ -1,0 +1,459 @@
+/* Variables */
+$vertical-navigation-width: 288;
+
+app-vertical-navigation {
+  position: sticky;
+  top: 0;
+  width: #{$vertical-navigation-width}px;
+  min-width: #{$vertical-navigation-width}px;
+  max-width: #{$vertical-navigation-width}px;
+  // height: 100vh;
+  // min-height: 100vh;
+  max-height: 100vh;
+  z-index: 200;
+
+  /* ----------------------------------------------------------------------------------------------------- */
+  /* @ Navigation Drawer
+  /* ----------------------------------------------------------------------------------------------------- */
+
+  /* Animations */
+  &.vertical-navigation-animations-enabled {
+    transition-duration: 400ms;
+    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition-property: visibility, margin-left, margin-right, transform, width, max-width, min-width;
+
+    /* Wrapper */
+    .vertical-navigation-wrapper {
+      transition-duration: 400ms;
+      transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+      transition-property: width, max-width, min-width;
+    }
+  }
+
+  /* Over mode */
+  &.vertical-navigation-mode-over {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+  }
+
+  /* Left position */
+  &.vertical-navigation-position-left {
+
+    /* Side mode */
+    &.vertical-navigation-mode-side {
+      margin-left: -#{$vertical-navigation-width}px;
+
+      &.vertical-navigation-opened {
+        margin-left: 0;
+      }
+    }
+
+    /* Over mode */
+    &.vertical-navigation-mode-over {
+      left: 0;
+      transform: translate3d(-100%, 0, 0);
+
+      &.vertical-navigation-opened {
+        transform: translate3d(0, 0, 0);
+      }
+    }
+
+    /* Wrapper */
+    .vertical-navigation-wrapper {
+      left: 0;
+    }
+  }
+
+  /* Right position */
+  &.vertical-navigation-position-right {
+
+    /* Side mode */
+    &.vertical-navigation-mode-side {
+      margin-right: -#{$vertical-navigation-width}px;
+
+      &.vertical-navigation-opened {
+          margin-right: 0;
+      }
+    }
+
+    /* Over mode */
+    &.vertical-navigation-mode-over {
+      right: 0;
+      transform: translate3d(100%, 0, 0);
+
+      &.vertical-navigation-opened {
+          transform: translate3d(0, 0, 0);
+      }
+    }
+
+    /* Wrapper */
+    .vertical-navigation-wrapper {
+      right: 0;
+    }
+  }
+
+  /* Inner mode */
+  &.vertical-navigation-inner {
+    position: relative;
+    width: auto;
+    min-width: 0;
+    max-width: none;
+    height: auto;
+    min-height: 0;
+    max-height: none;
+    box-shadow: none;
+
+    .vertical-navigation-wrapper {
+      position: relative;
+      overflow: visible;
+      height: auto;
+
+      .vertical-navigation-content {
+        overflow: visible !important;
+      }
+    }
+  }
+
+  /* Wrapper */
+  .vertical-navigation-wrapper {
+    padding-bottom: 20px;
+    width: 100%;
+    overflow: hidden;
+    z-index: 10;
+    background: inherit;
+
+    /* Content */
+    .vertical-navigation-content {
+      flex: 1 1 auto;
+      overflow-x: hidden;
+      overflow-y: auto;
+
+      /* Group */
+      > app-vertical-navigation-group-item {
+        margin-top: 8px;
+
+        &:first-child {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+
+  /* ----------------------------------------------------------------------------------------------------- */
+  /* @ Navigation Items
+  /* ----------------------------------------------------------------------------------------------------- */
+
+  /* Navigation items common */
+  app-vertical-navigation-basic-item,
+  app-vertical-navigation-collapsible-item,
+  app-vertical-navigation-group-item {
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 auto;
+    user-select: none;
+
+    .vertical-navigation-item-wrapper {
+
+      .vertical-navigation-item {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 8px 16px;
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 20px;
+        text-decoration: none;
+        border-radius: 6px;
+
+        .vertical-navigation-item-icon {
+          @apply icon-size-6;
+          margin-right: 16px;
+        }
+
+        .vertical-navigation-item-badge {
+          margin-left: auto;
+
+          .vertical-navigation-item-badge-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            font-weight: 600;
+            white-space: nowrap;
+            height: 20px;
+          }
+        }
+      }
+    }
+  }
+
+  /* Aside, Basic, Collapsible, Group */
+  app-vertical-navigation-basic-item,
+  app-vertical-navigation-collapsible-item,
+  app-vertical-navigation-group-item {
+
+    > .vertical-navigation-item-wrapper {
+      margin: 0 12px;
+    }
+  }
+
+  /* Aside, Basic, Collapsible */
+  app-vertical-navigation-basic-item,
+  app-vertical-navigation-collapsible-item {
+    margin-bottom: 4px;
+
+    .vertical-navigation-item {
+      cursor: pointer;
+    }
+  }
+
+  /* Collapsible */
+  app-vertical-navigation-collapsible-item {
+
+    > .vertical-navigation-item-wrapper {
+
+      .vertical-navigation-item {
+
+        .vertical-navigation-item-badge {
+
+          + .vertical-navigation-item-arrow {
+            margin-left: 8px;
+          }
+        }
+
+        .vertical-navigation-item-arrow {
+          height: 20px;
+          line-height: 20px;
+          margin-left: auto;
+          transition: transform 300ms cubic-bezier(0.25, 0.8, 0.25, 1),
+          color 375ms cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+      }
+    }
+
+    &.vertical-navigation-item-expanded {
+
+      > .vertical-navigation-item-wrapper {
+
+        .vertical-navigation-item {
+
+          .vertical-navigation-item-arrow {
+            transform: rotate(90deg);
+          }
+        }
+      }
+    }
+
+    > .vertical-navigation-item-children {
+
+      > *:last-child {
+        @apply mb-0 #{'!important'};
+      }
+
+      //   > .vertical-navigation-item-children {
+
+      //     > *:last-child {
+      //       padding-bottom: 0;
+      //     }
+      //   }
+      // }
+
+      .vertical-navigation-item {
+        padding: 8px 12px;
+      }
+    }
+
+    /* 1st level */
+    .vertical-navigation-item-children {
+      overflow: hidden;
+
+      .vertical-navigation-item {
+        padding-left: 28px;
+      }
+
+      /* 2nd level */
+      .vertical-navigation-item-children {
+
+        .vertical-navigation-item {
+          padding-left: 56px;
+        }
+
+        /* 3rd level */
+        .vertical-navigation-item-children {
+
+          .vertical-navigation-item {
+            padding-left: 72px;
+          }
+
+          /* 4th level */
+          .vertical-navigation-item-children {
+
+            .vertical-navigation-item {
+              padding-left: 88px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  /* Group */
+  app-vertical-navigation-group-item {
+
+    > .vertical-navigation-item-wrapper {
+
+      .vertical-navigation-item {
+
+        .vertical-navigation-item-badge,
+        .vertical-navigation-item-icon {
+          display: none !important;
+        }
+
+        .vertical-navigation-item-title-wrapper {
+
+          .vertical-navigation-item-title {
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* ----------------------------------------------------------------------------------------------------- */
+/* @ Overlay
+/* ----------------------------------------------------------------------------------------------------- */
+.vertical-navigation-overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 170;
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+/* ----------------------------------------------------------------------------------------------------- */
+/* @ Navigation Items Colors
+/* ----------------------------------------------------------------------------------------------------- */
+
+/* Navigation items common */
+app-vertical-navigation-basic-item,
+app-vertical-navigation-collapsible-item,
+app-vertical-navigation-group-item {
+
+  .vertical-navigation-item-wrapper {
+
+    .vertical-navigation-item {
+      color: currentColor;
+
+      .vertical-navigation-item-icon {
+        @apply text-current opacity-60;
+      }
+
+      .vertical-navigation-item-title-wrapper {
+
+        .vertical-navigation-item-title {
+          @apply text-current opacity-80;
+        }
+      }
+    }
+  }
+}
+
+/* Basic, Collapsible */
+app-vertical-navigation-basic-item,
+app-vertical-navigation-collapsible-item {
+
+  > .vertical-navigation-item-wrapper {
+
+    .vertical-navigation-item {
+
+      &.vertical-navigation-item-active,
+      &.vertical-navigation-item-active-forced {
+        @apply bg-gray-800 bg-opacity-5;
+
+        .vertical-navigation-item-icon {
+          @apply opacity-100;
+        }
+
+        .vertical-navigation-item-title {
+          @apply opacity-100;
+        }
+      }
+
+      /* Hover state */
+      &:not(.vertical-navigation-item-active-forced):not(.vertical-navigation-item-active) {
+
+        &:hover {
+          @apply bg-gray-800 bg-opacity-5;
+
+          .vertical-navigation-item-icon {
+            @apply opacity-100;
+          }
+
+          .vertical-navigation-item-title,
+          .vertical-navigation-item-arrow {
+            @apply opacity-100;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Collapsible */
+app-vertical-navigation-collapsible-item {
+
+  &.nav-item-group-container {
+    @apply py-1 mx-3 rounded-lg bg-blue-50;
+    
+    .vertical-navigation-item-wrapper {
+      @apply mx-1;
+    }
+  }
+
+  /* Expanded state */
+  &.vertical-navigation-item-expanded {
+
+    > .vertical-navigation-item-wrapper {
+
+      @apply mb-1;
+
+      .vertical-navigation-item {
+
+        .vertical-navigation-item-icon {
+          @apply opacity-100;
+        }
+
+        .vertical-navigation-item-title,
+        .vertical-navigation-item-arrow {
+          @apply opacity-100;
+        }
+      }
+    }
+  }
+}
+
+/* Group */
+app-vertical-navigation-group-item {
+
+  > .vertical-navigation-item-wrapper {
+
+    .vertical-navigation-item {
+
+      .vertical-navigation-item-title-wrapper {
+
+        .vertical-navigation-item-title {
+          @apply opacity-100 text-black;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,96 @@
+<!-- Item wrapper -->
+<div class="vertical-navigation-item-wrapper">
+
+  <!-- Item with an internal url -->
+  <a
+    *ngIf="item.url && !item.externalUrl && !item.function"
+    class="vertical-navigation-item"
+    [ngClass]="{'vertical-navigation-item-active-forced': item.active}"
+    [routerLink]="[item.url]"
+    [queryParams]="item.queryParams"
+    [routerLinkActive]="'vertical-navigation-item-active'"
+    [routerLinkActiveOptions]="{exact: item.exactMatch || false}"
+    (click)="handleClick()"
+  >
+    <ng-container *ngTemplateOutlet="itemTemplate"></ng-container>
+  </a>
+
+  <!-- Item with an external url -->
+  <a
+    *ngIf="item.url && item.externalUrl && !item.function"
+    class="vertical-navigation-item"
+    [href]="item.url"
+    (click)="handleClick()"
+  >
+    <ng-container *ngTemplateOutlet="itemTemplate"></ng-container>
+  </a>
+
+  <!-- Item with a function -->
+  <div
+    *ngIf="!item.url && item.function"
+    class="vertical-navigation-item"
+    [ngClass]="{'vertical-navigation-item-active-forced': item.active}"
+    (click)="handleClick(item)"
+  >
+    <ng-container *ngTemplateOutlet="itemTemplate"></ng-container>
+  </div>
+
+  <!-- Item with an internal url and function -->
+  <a
+    *ngIf="item.url && !item.externalUrl && item.function"
+    class="vertical-navigation-item"
+    [ngClass]="{'vertical-navigation-item-active-forced': item.active}"
+    [routerLink]="[item.url]"
+    [queryParams]="item.queryParams"
+    [routerLinkActive]="'vertical-navigation-item-active'"
+    [routerLinkActiveOptions]="{exact: item.exactMatch || false}"
+    (click)="handleClick(item)"
+  >
+    <ng-container *ngTemplateOutlet="itemTemplate"></ng-container>
+  </a>
+
+  <!-- Item with an external url and function -->
+  <a
+    *ngIf="item.url && item.externalUrl && item.function"
+    class="vertical-navigation-item"
+    [href]="item.url"
+    (click)="handleClick(item)"
+  >
+    <ng-container *ngTemplateOutlet="itemTemplate"></ng-container>
+  </a>
+
+</div>
+
+<!-- Item template -->
+<ng-template #itemTemplate>
+
+  <!-- Icon -->
+  <mat-icon
+    *ngIf="item.matIcon"
+    class="vertical-navigation-item-icon"
+    [ngStyle]="{'color': item.iconColor}"
+  >{{ item.matIcon }}</mat-icon>
+
+  <!-- Title & Subtitle -->
+  <div class="vertical-navigation-item-title-wrapper">
+    <div class="vertical-navigation-item-title">
+      <span>
+        {{ item.title }}
+      </span>
+    </div>
+  </div>
+
+  <!-- Badge -->
+  <div
+    *ngIf="item.badge"
+    class="vertical-navigation-item-badge"
+  >
+    <div
+      class="vertical-navigation-item-badge-content"
+      [ngClass]="item.badge.classes || ''"
+    >
+      {{ item.badge.title }}
+    </div>
+  </div>
+
+</ng-template>

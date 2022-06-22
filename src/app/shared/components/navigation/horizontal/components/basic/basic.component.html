@@ -1,0 +1,95 @@
+<!-- Item wrapper -->
+<div class="horizontal-navigation-item-wrapper">
+
+  <!-- Item with an internal url -->
+  <div
+    *ngIf="item.url && !item.externalUrl && !item.function"
+    class="horizontal-navigation-item"
+    [ngClass]="{'horizontal-navigation-item-active-forced': item.active}"
+    [routerLink]="[item.url]"
+    [queryParams]="item.queryParams"
+    [routerLinkActive]="'horizontal-navigation-item-active'"
+    [routerLinkActiveOptions]="{exact: item.exactMatch || false}"
+  >
+    <ng-container *ngTemplateOutlet="itemTemplate"></ng-container>
+  </div>
+
+  <!-- Item with an external url -->
+  <a
+    *ngIf="item.url && item.externalUrl && !item.function"
+    class="horizontal-navigation-item"
+    [href]="item.url"
+  >
+    <ng-container *ngTemplateOutlet="itemTemplate"></ng-container>
+  </a>
+
+  <!-- Item with a function -->
+  <div
+    *ngIf="!item.url && item.function"
+    class="horizontal-navigation-item"
+    [ngClass]="{'horizontal-navigation-item-active-forced': item.active}"
+    (click)="item.function(item)"
+  >
+    <ng-container *ngTemplateOutlet="itemTemplate"></ng-container>
+  </div>
+
+  <!-- Item with an internal url and function -->
+  <div
+    *ngIf="item.url && !item.externalUrl && item.function"
+    class="horizontal-navigation-item"
+    [ngClass]="{'horizontal-navigation-item-active-forced': item.active}"
+    [routerLink]="[item.url]"
+    [queryParams]="item.queryParams"
+    [routerLinkActive]="'horizontal-navigation-item-active'"
+    [routerLinkActiveOptions]="{exact: item.exactMatch || false}"
+    (click)="item.function(item)"
+  >
+    <ng-container *ngTemplateOutlet="itemTemplate"></ng-container>
+  </div>
+
+  <!-- Item with an external url and function -->
+  <a
+    *ngIf="item.url && item.externalUrl && item.function"
+    class="horizontal-navigation-item"
+    [href]="item.url"
+    (click)="item.function(item)"
+    mat-menu-item
+  >
+    <ng-container *ngTemplateOutlet="itemTemplate"></ng-container>
+  </a>
+
+</div>
+
+<!-- Item template -->
+<ng-template #itemTemplate>
+
+  <!-- Icon -->
+  <mat-icon
+    *ngIf="item.matIcon"
+    class="horizontal-navigation-item-icon"
+    [ngStyle]="{'color': item.iconColor}"
+  >{{ item.matIcon }}</mat-icon>
+
+  <!-- Title & Subtitle -->
+  <div class="horizontal-navigation-item-title-wrapper">
+    <div class="horizontal-navigation-item-title">
+      <span>
+        {{ item.title }}
+      </span>
+    </div>
+  </div>
+
+  <!-- Badge -->
+  <div
+    *ngIf="item.badge"
+    class="horizontal-navigation-item-badge"
+  >
+    <div
+      class="horizontal-navigation-item-badge-content"
+      [ngClass]="item.badge.classes || ''"
+    >
+      {{ item.badge.title }}
+    </div>
+  </div>
+
+</ng-template>

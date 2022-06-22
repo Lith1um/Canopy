@@ -1,0 +1,81 @@
+<div class="vertical-navigation-item-wrapper">
+
+  <div
+    class="vertical-navigation-item"
+    (click)="toggleCollapsible()">
+
+    <!-- Icon -->
+    <mat-icon
+      *ngIf="item.matIcon"
+      class="vertical-navigation-item-icon"
+      [ngStyle]="{'color': item.iconColor}"
+    >{{ item.matIcon }}</mat-icon>
+
+    <!-- Title & Subtitle -->
+    <div class="vertical-navigation-item-title-wrapper">
+      <div class="vertical-navigation-item-title">
+        {{ item.title }}
+      </div>
+    </div>
+
+    <!-- Badge -->
+    <div
+      *ngIf="item.badge"
+      class="vertical-navigation-item-badge"
+    >
+      <div
+        class="vertical-navigation-item-badge-content"
+        [ngClass]="item.badge.classes || ''"
+      >
+        {{ item.badge.title }}
+      </div>
+    </div>
+
+    <!-- Arrow -->
+    <mat-icon class="vertical-navigation-item-arrow icon-size-4">
+      keyboard_arrow_right
+    </mat-icon>
+
+  </div>
+
+</div>
+
+<div
+  *ngIf="!isCollapsed"
+  class="vertical-navigation-item-children">
+
+  <ng-container *ngFor="let item of item.children; trackBy: trackByFn">
+
+    <!-- Skip the hidden items -->
+    <ng-container *ngIf="!item.hidden">
+
+      <!-- Basic -->
+      <app-vertical-navigation-basic-item
+        *ngIf="item.type === 'item'"
+        [item]="item"
+        [name]="name"
+      ></app-vertical-navigation-basic-item>
+
+      <!-- Collapsible -->
+      <app-vertical-navigation-collapsible-item
+        *ngIf="item.type === 'collapsible'"
+        [item]="item"
+        [name]="name"
+        [autoCollapse]="autoCollapse"
+      ></app-vertical-navigation-collapsible-item>
+
+      <!-- Group -->
+      <app-vertical-navigation-group-item
+        *ngIf="item.type === 'group'"
+        [item]="item"
+        [name]="name"
+      ></app-vertical-navigation-group-item>
+
+    </ng-container>
+
+  </ng-container>
+
+</div>
+
+<!-- Divider -->
+<app-vertical-navigation-separator *ngIf="item.separator"></app-vertical-navigation-separator>

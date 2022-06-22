@@ -1,0 +1,28 @@
+<div #menu class="horizontal-navigation-wrapper">
+
+  <ng-container *ngFor="let item of navigation">
+
+    <!-- Skip the hidden items -->
+    <ng-container *ngIf="!item.hidden">
+
+      <!-- Basic -->
+      <app-horizontal-navigation-basic-item
+        class="horizontal-navigation-menu-item"
+        *ngIf="item.type === 'item'"
+        [item]="item"
+        [name]="name"
+      ></app-horizontal-navigation-basic-item>
+
+      <!-- Branch: collapsible, group -->
+      <app-horizontal-navigation-branch-item
+        class="horizontal-navigation-menu-item"
+        *ngIf="item.type === 'collapsible' || item.type === 'group'"
+        [item]="item"
+        [name]="name"
+      ></app-horizontal-navigation-branch-item>
+
+    </ng-container>
+
+  </ng-container>
+
+</div>

@@ -1,0 +1,141 @@
+/* Root navigation specific */
+app-horizontal-navigation {
+
+  @apply w-full;
+
+  .horizontal-navigation-wrapper {
+    // @apply p-2;
+    // border-bottom: solid 1px rgba(0, 0, 0, 0.12);
+    display: inline-flex;
+    align-items: center;
+
+    & > * {
+      flex: none;
+    }
+
+    /* Basic, Branch */
+    app-horizontal-navigation-basic-item,
+    app-horizontal-navigation-branch-item {
+
+      &:hover {
+        .horizontal-navigation-item-wrapper {
+          background-color: rgba(31, 41, 55, var(--tw-bg-opacity));
+          --tw-bg-opacity: 0.05;
+        }
+      }
+
+      .horizontal-navigation-item-wrapper {
+        border-radius: 4px;
+        overflow: hidden;
+
+        .horizontal-navigation-item {
+          padding: 0 16px;
+          cursor: pointer;
+          user-select: none;
+
+          .horizontal-navigation-item-title {
+            @apply text-gray-800;
+          }
+
+          .horizontal-navigation-item-icon {
+            @apply icon-size-5 -ml-1 mr-2 text-gray-500;
+          }
+        }
+      }
+    }
+
+    /* Basic - When item active (current link) */
+    app-horizontal-navigation-basic-item {
+
+      .horizontal-navigation-item-active,
+      .horizontal-navigation-item-active-forced {
+
+        .horizontal-navigation-item-title {
+          @apply text-blue-500 #{'!important'};
+        }
+
+        .horizontal-navigation-item-icon {
+          @apply text-blue-500 #{'!important'};
+        }
+      }
+    }
+
+    /* Branch - When menu open */
+    app-horizontal-navigation-branch-item {
+
+      .horizontal-navigation-menu-active,
+      .horizontal-navigation-menu-active-forced {
+
+        .horizontal-navigation-item-wrapper {
+          background-color: rgba(31, 41, 55, var(--tw-bg-opacity));
+          --tw-bg-opacity: 0.05;
+        }
+      }
+    }
+  }
+}
+
+/* Menu panel specific */
+.horizontal-navigation-menu-panel {
+
+  .horizontal-navigation-menu-item {
+    height: auto;
+    min-height: 0;
+    line-height: normal;
+    white-space: normal;
+  }
+}
+
+/* Navigation menu item common */
+.horizontal-navigation-menu-item {
+
+  /* Basic - When item active (current link) */
+  app-horizontal-navigation-basic-item {
+
+    .horizontal-navigation-item-active,
+    .horizontal-navigation-item-active-forced {
+
+      .horizontal-navigation-item-title {
+        @apply text-blue-500 #{'!important'};
+      }
+
+      .horizontal-navigation-item-icon {
+        @apply text-blue-500 #{'!important'};
+      }
+    }
+  }
+
+  .horizontal-navigation-item-wrapper {
+    width: 100%;
+
+    .horizontal-navigation-item {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 40px;
+      width: 100%;
+      font-size: 13px;
+      font-weight: 400;
+      text-decoration: none;
+
+      .horizontal-navigation-item-icon {
+        @apply icon-size-5 mr-4 text-gray-500;
+      }
+
+      .horizontal-navigation-item-badge {
+        margin-left: auto;
+
+        .horizontal-navigation-item-badge-content {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 10px;
+          font-weight: 600;
+          white-space: nowrap;
+          height: 20px;
+        }
+      }
+    }
+  }
+}

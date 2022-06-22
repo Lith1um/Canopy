@@ -1,1 +1,13 @@
-<h3 class="text-3xl font-bold">Angular Template Project</h3>
+<div class="h-full w-full flex flex-col">
+  
+  <app-toolbar [title]="title"></app-toolbar>
+  
+  <div class="relative flex-auto">
+    <app-layout [navigationItems]="items" menuTitle="Menu">
+      <ng-container content>
+        <router-outlet style="display: none;"></router-outlet>
+      </ng-container>
+    </app-layout>
+  </div>
+
+</div>

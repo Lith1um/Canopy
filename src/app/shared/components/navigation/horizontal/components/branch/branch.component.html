@@ -1,0 +1,106 @@
+<div
+  *ngIf="!child"
+  [ngClass]="{
+    'horizontal-navigation-menu-active': trigger.menuOpen,
+    'horizontal-navigation-menu-active-forced': item.active
+  }"
+  [matMenuTriggerFor]="matMenu"
+  (onMenuOpen)="triggerChangeDetection()"
+  (onMenuClose)="triggerChangeDetection()"
+  #trigger="matMenuTrigger"
+>
+  <ng-container *ngTemplateOutlet="itemTemplate; context: {$implicit: item}"></ng-container>
+</div>
+
+<mat-menu
+  class="horizontal-navigation-menu-panel min-h-fit"
+  [overlapTrigger]="false"
+  #matMenu="matMenu">
+
+  <ng-container *ngFor="let item of item.children">
+
+    <!-- Skip the hidden items -->
+    <ng-container *ngIf="!item.hidden">
+
+      <!-- Basic -->
+      <div
+        *ngIf="item.type === 'item'"
+        mat-menu-item
+        class="horizontal-navigation-menu-item"
+      >
+        <app-horizontal-navigation-basic-item
+          [item]="item"
+          [name]="name"
+        ></app-horizontal-navigation-basic-item>
+      </div>
+
+      <!-- Branch: collapsible, group -->
+      <div
+        *ngIf="item.type === 'collapsible' || item.type === 'group'"
+        mat-menu-item
+        class="horizontal-navigation-menu-item"
+        [matMenuTriggerFor]="branch.matMenu"
+      >
+        <ng-container *ngTemplateOutlet="itemTemplate; context: {$implicit: item}"></ng-container>
+        <app-horizontal-navigation-branch-item
+          #branch
+          [child]="true"
+          [item]="item"
+          [name]="name"
+        ></app-horizontal-navigation-branch-item>
+      </div>
+
+      <!-- Divider -->
+      <app-horizontal-navigation-separator *ngIf="item.separator"></app-horizontal-navigation-separator>
+
+    </ng-container>
+
+  </ng-container>
+
+</mat-menu>
+
+<!-- Item template -->
+<ng-template
+  let-item
+  #itemTemplate>
+
+  <div
+    class="horizontal-navigation-item-wrapper"
+    [ngClass]="item.classes?.wrapper">
+
+    <div
+      class="horizontal-navigation-item"
+      [class.horizontal-navigation-item-active-forced]="item.active">
+
+      <!-- Icon -->
+      <mat-icon
+        *ngIf="item.matIcon"
+        class="horizontal-navigation-item-icon"
+        [ngStyle]="{'color': item.iconColor}"
+      >{{ item.matIcon }}</mat-icon>
+
+      <!-- Title & Subtitle -->
+      <div class="horizontal-navigation-item-title-wrapper">
+        <div class="horizontal-navigation-item-title">
+          <span [ngClass]="item.classes?.title">
+            {{ item.title }}
+          </span>
+        </div>
+      </div>
+
+      <!-- Badge -->
+      <div
+        *ngIf="item.badge"
+        class="horizontal-navigation-item-badge"
+      >
+        <div
+          class="horizontal-navigation-item-badge-content"
+          [ngClass]="item.badge.classes"
+        >
+          {{ item.badge.title }}
+        </div>
+      </div>
+    </div>
+  </div>
+
+</ng-template>

@@ -1,10 +1,17 @@
 import { ModuleWithProviders, NgModule, Optional, SkipSelf } from '@angular/core';
 import { SharedModule } from '@shared/shared.module';
+import { LayoutComponent, ToolbarComponent } from '@core/components';
 
 @NgModule({
   imports: [SharedModule],
-  exports: [],
-  declarations: [],
+  declarations: [
+    LayoutComponent,
+    ToolbarComponent
+  ],
+  exports: [
+    LayoutComponent,
+    ToolbarComponent
+  ],
   providers: [],
 })
 export class CoreModule {

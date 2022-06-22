@@ -1,0 +1,43 @@
+<div class="absolute inset-0 flex flex-col min-w-0 overflow-hidden">
+
+  <mat-drawer-container class="flex-auto h-full">
+    <!-- Drawer -->
+    <mat-drawer
+      class="w-full xs:w-72 absolute"
+      [mode]="drawerMode"
+      [opened]="layoutService.menuOpen$ | async">
+
+      <button
+        mat-icon-button
+        class="xs:hidden absolute right-2 top-2 z-10"
+        (click)="layoutService.closeMenu()">
+        <mat-icon>close</mat-icon>
+      </button>
+
+      <!-- Menu sidebar -->
+      <div *ngIf="menuTitle" class="mx-5 mt-10 mb-6 text-xl font-bold tracking-tighter">
+        {{ menuTitle }}
+      </div>
+
+      <ng-content select="[sidebar]">
+      </ng-content>
+
+      <app-vertical-navigation
+        *ngIf="navigationItems"
+        [autoCollapse]="autoCollapseMenu"
+        [navigation]="navigationItems"
+        (itemClicked)="handleNav()"
+      ></app-vertical-navigation>
+    </mat-drawer>
+
+    <!-- Drawer content -->
+    <mat-drawer-content class="flex flex-col overflow-hidden">
+
+      <!-- Main -->
+      <div class="h-full w-full">
+        <ng-content select="[content]">
+        </ng-content>
+      </div>
+    </mat-drawer-content>
+  </mat-drawer-container>
+</div>

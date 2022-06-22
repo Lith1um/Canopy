@@ -9,9 +9,10 @@ A project designed to make building new apps in angular as easy as possible.
 
 ## To-Do
 
- - Add navigation menus
- - Generic layout (toolbar/side menu?)
+ - mobile support
+ - form helpers (Formly?)
  - login page
  - basic module with lazy load routing
  - auth support?
- - crud API support? 
+ - crud API support?
+ - spectator/testing library
