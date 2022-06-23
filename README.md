@@ -13,10 +13,8 @@ A project designed to make building new apps in angular as easy as possible.
 
 ## To-Do
 
- - dialogs
  - mobile support
- - login page
- - basic module with lazy load routing
+ - login page?
  - auth support?
  - crud API support?
  - spectator/testing library
