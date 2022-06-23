@@ -667,16 +667,38 @@
     .mat-form-field.mat-form-field-appearance-fill {
 
         &.mat-form-field-type-checkbox,
+        &.mat-form-field-type-toggle,
+        &.mat-form-field-type-color-picker,
+        &.mat-form-field-type-button-toggle {
+            &.mat-focused {
+
+                .mat-form-field-wrapper {
+
+                    .mat-form-field-flex {
+                        @apply bg-transparent #{'!important'};
+
+                        &:hover {
+                          @apply bg-transparent #{'!important'};
+                        }
+                    }
+                }
+            }
+
+            .mat-form-field-wrapper {
+    
+              .mat-form-field-flex {    
+                  &:hover {
+                    @apply bg-transparent #{'!important'};
+                  }
+              }
+          }
+        }
+
+        &.mat-form-field-type-checkbox,
         &.mat-form-field-type-toggle {
     
             .mat-form-field-wrapper {
                 @apply mt-4 text-sm #{'!important'};
-      
-                .mat-form-field-flex {    
-                    &:hover {
-                      @apply bg-transparent #{'!important'};
-                    }
-                }
             }
         }
     
@@ -721,7 +743,7 @@
 
         &.mat-form-field-invalid {
             .mat-form-field-wrapper {
-                .mat-form-field-flex {
+              .mat-form-field-flex {
                     @apply border-red-500 bg-white #{'!important'};
 
                     &:hover {
