@@ -13,6 +13,17 @@ module.exports = {
       fontFamily: {
         sans: `"Inter var", ${defaultTheme.fontFamily.sans.join(',')}`
       },
+      typography: {
+        DEFAULT: { // this is for prose class
+          css: {
+            pre: {
+              backgroundColor: '#1e293b',
+              padding: '0 24px !important',
+              lineHeight: '24px !important'
+            }
+          }
+        }
+      },
       screens: {
         'xs': '480px'
       },

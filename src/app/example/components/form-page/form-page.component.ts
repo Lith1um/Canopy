@@ -55,6 +55,7 @@ fcTextInput(
       textarea: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque semper vulputate sagittis. Sed sem lorem, efficitur sit amet elementum at, suscipit nec dui.',
       colour: '#0084C7',
       checkbox: false,
+      dateDisabled: '2022-06-12',
       toggle: true,
       number: 45
     }
@@ -104,7 +105,7 @@ fcTextInput(
       ),
       fcGridRow(
         fcDatepicker(
-          'date-disabled',
+          'dateDisabled',
           'Date disabled',
           {
             disabled: true

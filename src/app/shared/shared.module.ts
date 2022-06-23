@@ -14,6 +14,7 @@ import {
   HorizontalNavigationBranchItemComponent,
   HorizontalNavigationComponent,
   HorizontalNavigationSeparatorComponent,
+  JsonComponent,
   PageContainerComponent,
   VerticalNavigationBasicItemComponent,
   VerticalNavigationCollapsibleItemComponent,
@@ -60,6 +61,7 @@ import { TimeMaskDirective } from '@shared/directives';
     VerticalNavigationCollapsibleItemComponent,
     VerticalNavigationGroupItemComponent,
     VerticalNavigationSeparatorComponent,
+    JsonComponent,
     FormlyButtonToggleTypeComponent,
     FormlyColorTypeComponent,
     FormlyTextareaTypeComponent,
@@ -93,6 +95,7 @@ import { TimeMaskDirective } from '@shared/directives';
     VerticalNavigationCollapsibleItemComponent,
     VerticalNavigationGroupItemComponent,
     VerticalNavigationSeparatorComponent,
+    JsonComponent,
     PageContainerComponent
   ],
   providers: [],
