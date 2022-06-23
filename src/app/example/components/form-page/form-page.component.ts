@@ -22,9 +22,11 @@ import {
 export class FormPageComponent implements OnInit {
 
   fields: FormlyFieldConfig[] = [];
-  model: any = {};
+  model: any = this.createModel();
   form = new FormGroup({});
   options: FormlyFormOptions = {};
+
+  formClass = 'mat-default';
 
   textInputCode = `
 fcTextInput(
@@ -45,6 +47,17 @@ fcTextInput(
 
   ngOnInit(): void {
     this.configureFields();
+  }
+
+  createModel(): any {
+    return {
+      text: 'some text',
+      textarea: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque semper vulputate sagittis. Sed sem lorem, efficitur sit amet elementum at, suscipit nec dui.',
+      colour: '#0084C7',
+      checkbox: false,
+      toggle: true,
+      number: 45
+    }
   }
 
   configureFields(): void {

@@ -120,7 +120,7 @@ export function fcTextareaInput(
   return {
     className,
     key,
-    type: 'textarea',
+    type: 'custom-textarea',
     templateOptions: {
       label,
       required,

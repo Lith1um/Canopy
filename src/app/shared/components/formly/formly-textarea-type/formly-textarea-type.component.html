@@ -1,0 +1,16 @@
+<div class="formly-custom-textarea">
+  <textarea
+    matInput
+    #autosize="cdkTextareaAutosize"
+    [readonly]="to.readonly"
+    [required]="to.required || false"
+    [formControl]="$any(formControl)"
+    [errorStateMatcher]="errorStateMatcher"
+    [formlyAttributes]="field"
+    [placeholder]="to.placeholder || ''"
+    [cdkTextareaAutosize]="to.autosize"
+    [cdkAutosizeMinRows]="to.autosizeMinRows"
+    [cdkAutosizeMaxRows]="to.autosizeMaxRows"
+    [class.cdk-textarea-autosize]="to.autosize">
+  </textarea>
+</div>

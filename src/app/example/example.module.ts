@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { SharedModule } from '@shared/shared.module';
-import { FormPageComponent } from '@example/components';
+import { FormPageComponent, HomepageComponent } from '@example/components';
 import { ExampleRoutingModule } from './example-routing.module';
 
 @NgModule({
@@ -9,7 +9,8 @@ import { ExampleRoutingModule } from './example-routing.module';
     SharedModule
   ],
   declarations: [
-    FormPageComponent
+    FormPageComponent,
+    HomepageComponent
   ],
   providers: [],
 })

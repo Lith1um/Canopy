@@ -8,11 +8,13 @@ import {
   FormlyButtonToggleTypeComponent,
   FormlyColorTypeComponent,
   FormlyRepeatSectionTypeComponent,
+  FormlyTextareaTypeComponent,
   FormlyTimeTypeComponent,
   HorizontalNavigationBasicItemComponent,
   HorizontalNavigationBranchItemComponent,
   HorizontalNavigationComponent,
   HorizontalNavigationSeparatorComponent,
+  PageContainerComponent,
   VerticalNavigationBasicItemComponent,
   VerticalNavigationCollapsibleItemComponent,
   VerticalNavigationComponent,
@@ -60,8 +62,10 @@ import { TimeMaskDirective } from '@shared/directives';
     VerticalNavigationSeparatorComponent,
     FormlyButtonToggleTypeComponent,
     FormlyColorTypeComponent,
+    FormlyTextareaTypeComponent,
     FormlyRepeatSectionTypeComponent,
     FormlyTimeTypeComponent,
+    PageContainerComponent,
 
     TimeMaskDirective
   ],
@@ -88,7 +92,8 @@ import { TimeMaskDirective } from '@shared/directives';
     VerticalNavigationBasicItemComponent,
     VerticalNavigationCollapsibleItemComponent,
     VerticalNavigationGroupItemComponent,
-    VerticalNavigationSeparatorComponent
+    VerticalNavigationSeparatorComponent,
+    PageContainerComponent
   ],
   providers: [],
 })

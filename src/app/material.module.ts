@@ -6,6 +6,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { TextFieldModule } from '@angular/cdk/text-field';
+import { MatInputModule } from '@angular/material/input';
 
 import { CustomDateAdapter } from './custom-date-adapter';
 import { DateAdapter, MAT_DATE_FORMATS } from '@angular/material/core';
@@ -17,7 +19,9 @@ import { DateAdapter, MAT_DATE_FORMATS } from '@angular/material/core';
     MatIconModule,
     MatSidenavModule,
     MatMenuModule,
-    MatButtonToggleModule
+    MatButtonToggleModule,
+    MatInputModule,
+    TextFieldModule
   ],
   exports: [
     MatToolbarModule,
@@ -25,7 +29,9 @@ import { DateAdapter, MAT_DATE_FORMATS } from '@angular/material/core';
     MatIconModule,
     MatSidenavModule,
     MatMenuModule,
-    MatButtonToggleModule
+    MatButtonToggleModule,
+    MatInputModule,
+    TextFieldModule
   ],
   declarations: [],
   providers: [

@@ -16,7 +16,7 @@ import {
   minLengthValidationMessage,
   minValidationMessage
 } from '@shared/helpers';
-import { FormlyButtonToggleTypeComponent, FormlyColorTypeComponent, FormlyRepeatSectionTypeComponent, FormlyTimeTypeComponent } from '@shared/components';
+import { FormlyButtonToggleTypeComponent, FormlyColorTypeComponent, FormlyRepeatSectionTypeComponent, FormlyTextareaTypeComponent, FormlyTimeTypeComponent } from '@shared/components';
 import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
 import { MAT_DATE_LOCALE } from '@angular/material/core';
 
@@ -43,6 +43,11 @@ import { MAT_DATE_LOCALE } from '@angular/material/core';
         {
           name: 'color-picker',
           component: FormlyColorTypeComponent,
+          wrappers: ['form-field']
+        },
+        {
+          name: 'custom-textarea',
+          component: FormlyTextareaTypeComponent,
           wrappers: ['form-field']
         },
         {

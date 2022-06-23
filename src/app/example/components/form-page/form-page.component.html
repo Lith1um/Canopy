@@ -1,15 +1,24 @@
-<div class="max-w-5xl my-8 md:my-16 mx-auto px-4 md:px-8 lg:px-16">
-  <article class="max-w-full prose lg:prose-xl mb-12">
+<app-page-container>
+  <article class="max-w-full prose lg:prose-xl mb-6">
     <h2>Form examples</h2>
     <p>This section contains example form fields that can be configured out the box. A custom wrapper and styling system on top of ngx-formly provides an easy to use set of helper functions that configure your forms through config alone.</p>
     <p>See an example below for a text field:</p>
     <pre class="py-0 leading-6">
       <code>{{ textInputCode }}</code>
     </pre>
+    <h4>Example Form</h4>
   </article>
-  <form [formGroup]="form">
-    <formly-form [model]="model" [fields]="fields" [options]="options" [form]="form"></formly-form>
-  </form>
+  <p>Available form styles:</p>
+  <mat-button-toggle-group class="h-[42px] items-center mb-8" [(ngModel)]="formClass">
+    <mat-button-toggle value="mat-default">Default</mat-button-toggle>
+    <mat-button-toggle value="mat-dense">Dense</mat-button-toggle>
+    <mat-button-toggle value="mat-inline">Inline</mat-button-toggle>
+  </mat-button-toggle-group>
+  <div [ngClass]="formClass">
+    <form [formGroup]="form">
+      <formly-form [model]="model" [fields]="fields" [options]="options" [form]="form"></formly-form>
+    </form>
+  </div>
   <button
     mat-flat-button
     class="mt-2"
@@ -18,4 +27,4 @@
     (click)="save()">
     Save
   </button>
-</div>
+</app-page-container>

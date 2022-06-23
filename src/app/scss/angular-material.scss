@@ -311,7 +311,7 @@
               padding: 0;
               border: 0;
 
-              > *:not(textarea):not(formly-field-mat-toggle):not(mat-datepicker) {
+              > *:not(.formly-custom-textarea):not(formly-field-mat-toggle):not(mat-datepicker) {
                 flex: 1;
                 height: 100%;
                 box-sizing: border-box;
@@ -322,12 +322,12 @@
                   width: 100%;
               }
 
-              .mat-input-element {
+              .mat-input-element:not(textarea) {
                   padding: 11px 0;
               }
 
               /* Textarea */
-              textarea.mat-input-element {
+              .formly-custom-textarea {
                   display: flex;
                   align-self: stretch;
                   height: auto;
@@ -507,7 +507,7 @@
 
             .mat-form-field-infix {
 
-                .mat-input-element {
+                .mat-input-element:not(textarea) {
                     padding: 7px 0;
                 }
             }
@@ -628,7 +628,7 @@
                 }
 
                 .mat-form-field-infix {
-                    textarea.mat-input-element {
+                    .formly-custom-textarea {
                         margin: 4px 0 3px 0 !important;
                     }
 
@@ -636,7 +636,7 @@
                         @apply -top-4 text-xs;
                     }
 
-                    .mat-input-element {
+                    .mat-input-element:not(textarea) {
                         padding: 7px 0;
                     }
                 }
@@ -657,7 +657,7 @@
         @apply h-[34px] mt-4 leading-7 #{'!important'};
     }
 
-    .mat-checkbox {
+    .mat-checkbox, .mat-slide-toggle {
         @apply ml-2 #{'!important'};
     }
 
@@ -838,7 +838,7 @@
 
                 .mat-form-field-infix {
 
-                    textarea.mat-input-element {
+                    .formly-custom-textarea {
                         margin: 4px 0 3px 0 !important;
                     }
 
@@ -855,7 +855,7 @@
                         }
                     }
 
-                    .mat-input-element {
+                    .mat-input-element:not(textarea) {
                         padding: 7px 0;
                     }
                 }

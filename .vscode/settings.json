@@ -18,8 +18,5 @@
     "titleBar.activeForeground": "#383838",
     "titleBar.inactiveBackground": "#d162db99",
     "titleBar.inactiveForeground": "#38383899"
-  },
-  "cSpell.words": [
-    "colour"
-  ]
+  }
 }

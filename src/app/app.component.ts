@@ -20,19 +20,12 @@ export class AppComponent {
       matIcon: 'home'
     },
     {
-      id: 'form',
+      id: 'form-example',
       title: 'Form Example',
       type: 'item',
-      url: 'form',
+      url: 'form-example',
       matIcon: 'edit_note'
-    },
-    {
-      id: 'settings',
-      title: 'Settings',
-      type: 'item',
-      url: 'settings',
-      matIcon: 'settings'
-    },
+    }
   ];
 
 }
