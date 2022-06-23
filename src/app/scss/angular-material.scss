@@ -473,6 +473,7 @@
     }
 
     .mat-form-field-wrapper {
+        @apply mb-2 pb-0;
 
         .mat-form-field-flex {
             min-height: 34px;
@@ -594,7 +595,7 @@
         }
 
         .mat-form-field-wrapper {
-            @apply mb-1 pb-0;
+            @apply mb-2 pb-0;
 
             .mat-form-field-flex {
                 min-height: 34px;
@@ -650,7 +651,8 @@
 
     mat-button-toggle-group,
     .color-picker {
-        @apply h-[34px] #{'!important'};
+        @apply h-[34px] ml-2 #{'!important'};
+        width: calc(100% - 8px) !important;
     }
 
     button:not([mat-icon-button]):not(.mat-button-toggle-button) {
@@ -659,10 +661,6 @@
 
     .mat-checkbox, .mat-slide-toggle {
         @apply ml-2 #{'!important'};
-    }
-
-    .color-picker {
-        width: calc(100% - 12px) !important;
     }
 
     &.mat-form-field.mat-form-field-appearance-fill,
@@ -755,7 +753,7 @@
         }
 
         .mat-form-field-wrapper {
-            @apply mb-1 pb-0 #{'!important'};
+            @apply mb-2 pb-0 #{'!important'};
 
             .mat-form-field-subscript-wrapper {
                 @apply pl-2 #{'!important'};
