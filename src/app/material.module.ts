@@ -9,6 +9,7 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatInputModule } from '@angular/material/input';
 import { MatDialogModule, MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/dialog';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { TextFieldModule } from '@angular/cdk/text-field';
@@ -27,6 +28,7 @@ import { DateAdapter, MAT_DATE_FORMATS } from '@angular/material/core';
     MatInputModule,
     MatDialogModule,
     MatTooltipModule,
+    MatCheckboxModule,
 
     TextFieldModule,
     DragDropModule
@@ -41,6 +43,7 @@ import { DateAdapter, MAT_DATE_FORMATS } from '@angular/material/core';
     MatInputModule,
     MatDialogModule,
     MatTooltipModule,
+    MatCheckboxModule,
 
     TextFieldModule,
     DragDropModule

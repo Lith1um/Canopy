@@ -25,7 +25,8 @@ import {
   DialogHeaderComponent,
   DialogMaximiseComponent,
   SimpleDialogComponent,
-  ConfirmDialogComponent
+  ConfirmDialogComponent,
+  LoginComponent
 } from '@shared/components';
 
 // Formly
@@ -68,6 +69,7 @@ import { ConfirmDialogService, DialogService, DialogSizeStateService } from '@sh
     VerticalNavigationGroupItemComponent,
     VerticalNavigationSeparatorComponent,
     JsonComponent,
+    LoginComponent,
     FormlyButtonToggleTypeComponent,
     FormlyColorTypeComponent,
     FormlyTextareaTypeComponent,
@@ -107,6 +109,7 @@ import { ConfirmDialogService, DialogService, DialogSizeStateService } from '@sh
     VerticalNavigationGroupItemComponent,
     VerticalNavigationSeparatorComponent,
     JsonComponent,
+    LoginComponent,
     PageContainerComponent,
     ConfirmDialogComponent,
     DialogFooterComponent,

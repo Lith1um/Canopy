@@ -32,6 +32,13 @@ export class AppComponent {
       type: 'item',
       url: 'dialog-example',
       matIcon: 'web_asset'
+    },
+    {
+      id: 'login-example',
+      title: 'Login Example',
+      type: 'item',
+      url: 'login-example',
+      matIcon: 'login'
     }
   ];
 

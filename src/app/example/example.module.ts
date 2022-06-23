@@ -5,7 +5,8 @@ import {
   CustomDialogComponent,
   DialogPageComponent,
   FormPageComponent,
-  HomepageComponent
+  HomepageComponent,
+  LoginPageComponent
 } from '@example/components';
 import { ExampleRoutingModule } from './example-routing.module';
 
@@ -19,7 +20,8 @@ import { ExampleRoutingModule } from './example-routing.module';
     CustomDialogComponent,
     DialogPageComponent,
     FormPageComponent,
-    HomepageComponent
+    HomepageComponent,
+    LoginPageComponent
   ],
   providers: [],
 })

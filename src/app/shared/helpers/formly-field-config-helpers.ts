@@ -86,6 +86,49 @@ export function fcTextInput(
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////
+////////// Password
+////////////////////////////////////////////////////////////////////////////////////////
+export function fcPassword(
+  key: string,
+  label: string,
+  {
+    required = false,
+    disabled,
+    placeholder,
+    className = '',
+    expressionProperties,
+    hideExpression,
+    onInit,
+    hintText,
+    validators
+  }: BaseParams
+): FormlyFieldConfig {
+  return {
+    className,
+    key,
+    type: 'input',
+    templateOptions: {
+      type: 'password',
+      label,
+      required,
+      disabled,
+      placeholder,
+      description: hintText
+    },
+    expressionProperties,
+    hideExpression,
+    validators,
+    hooks: {
+      onInit: (field: any): void => {
+        if (onInit) {
+          onInit(field);
+        }
+      }
+    }
+  };
+}
+
+////////////////////////////////////////////////////////////////////////////////////////
 ////////// TextareaInput Params
 ////////////////////////////////////////////////////////////////////////////////////////
 interface TextareaInputParams extends TextInputParams {
@@ -747,7 +790,7 @@ export function fcDenseForm(...fields: FormlyFieldConfig[]): FormlyFieldConfig {
 
 export function fcGridRow(...fields: FormlyFieldConfig[]): FormlyFieldConfig {
   return {
-    fieldGroupClassName: `grid justify-items-stretch items-start gap-4 grid-cols-auto`,
+    fieldGroupClassName: `grid justify-items-stretch items-start gap-x-4 grid-cols-1 md:grid-cols-auto`,
     fieldGroup: fields
   };
 }

@@ -32,7 +32,7 @@ export class LayoutComponent implements OnInit {
 
   ngOnInit(): void {
     this.breakpointObserver
-      .observe(['(min-width: 480px)'])
+      .observe(['(min-width: 640px)'])
       .subscribe((state: BreakpointState) => {
         if (state.matches) {
           this.drawerMode = 'side';
