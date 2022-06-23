@@ -20,7 +20,12 @@ import {
   VerticalNavigationCollapsibleItemComponent,
   VerticalNavigationComponent,
   VerticalNavigationGroupItemComponent,
-  VerticalNavigationSeparatorComponent
+  VerticalNavigationSeparatorComponent,
+  DialogFooterComponent,
+  DialogHeaderComponent,
+  DialogMaximiseComponent,
+  SimpleDialogComponent,
+  ConfirmDialogComponent
 } from '@shared/components';
 
 // Formly
@@ -32,6 +37,7 @@ import { FormlySelectModule } from '@ngx-formly/core/select';
 
 import { NgxColorsModule } from 'ngx-colours';
 import { TimeMaskDirective } from '@shared/directives';
+import { ConfirmDialogService, DialogService, DialogSizeStateService } from '@shared/services';
 
 @NgModule({
   imports: [
@@ -68,6 +74,11 @@ import { TimeMaskDirective } from '@shared/directives';
     FormlyRepeatSectionTypeComponent,
     FormlyTimeTypeComponent,
     PageContainerComponent,
+    ConfirmDialogComponent,
+    DialogFooterComponent,
+    DialogHeaderComponent,
+    DialogMaximiseComponent,
+    SimpleDialogComponent,
 
     TimeMaskDirective
   ],
@@ -96,8 +107,17 @@ import { TimeMaskDirective } from '@shared/directives';
     VerticalNavigationGroupItemComponent,
     VerticalNavigationSeparatorComponent,
     JsonComponent,
-    PageContainerComponent
+    PageContainerComponent,
+    ConfirmDialogComponent,
+    DialogFooterComponent,
+    DialogHeaderComponent,
+    DialogMaximiseComponent,
+    SimpleDialogComponent
   ],
-  providers: [],
+  providers: [
+    ConfirmDialogService,
+    DialogSizeStateService,
+    DialogService
+  ],
 })
 export class SharedModule {}

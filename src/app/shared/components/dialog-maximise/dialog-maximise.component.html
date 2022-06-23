@@ -1,0 +1,7 @@
+<button
+  matTooltip="{{ maximised ? 'Collapse' : 'Expand' }}"
+  mat-icon-button
+  tabindex="-1"
+  (click)="maximise()">
+  <mat-icon class="icon-size-5">{{ maximised ? 'close_fullscreen' : 'open_in_full' }}</mat-icon>
+</button>

@@ -1,0 +1,11 @@
+<div
+  mat-dialog-actions
+  class="justify-between"
+  [class.hidden]="hideFooter">
+  <div #actions class="flex items-center gap-4">
+    <ng-content select="[actions]"></ng-content>
+  </div>
+  <div #buttons class="flex items-center gap-4">
+    <ng-content select="[buttons]"></ng-content>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+<app-dialog-header
+  title="Custom Dialog"
+  [id]="5"
+  [canMaximise]="true">
+  <mat-icon prefix class="text-green-500">verified</mat-icon>
+  <p content class="text-sm text-gray-500">Dialog subheading text. This can be any content projected elements.</p>
+</app-dialog-header>
+
+<div mat-dialog-content class="p-4">
+  <p class="mb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum mattis, erat ac auctor laoreet, urna dui ultricies mi, a congue turpis purus eu nunc. Phasellus lobortis non enim id dapibus. Sed a elit tempus, consectetur nisi at, dignissim ipsum. Integer eget sodales tortor. Ut aliquam odio dolor, ac efficitur justo mollis nec. Pellentesque nec erat id nisi iaculis porta ut eget massa. Pellentesque ultricies quam id neque suscipit, vel efficitur quam gravida. Nam ac lobortis nunc. Aenean vehicula, nunc sit amet faucibus tempor, ipsum augue vestibulum nibh, a sodales erat enim in nisi. Aenean vulputate ex vel mi sodales tincidunt. Aenean semper est quis condimentum malesuada.</p>
+  <p class="mb-3">Cras interdum ultrices felis non ultricies. Nulla posuere ut sem eget malesuada. Maecenas hendrerit vitae erat at lobortis. Integer viverra, ante et pulvinar fringilla, felis lectus convallis orci, eget consectetur enim ligula ac purus. Nulla et diam a felis egestas venenatis. Morbi pellentesque sollicitudin ipsum, sit amet ornare orci sollicitudin vel. Aenean vehicula lectus in mauris pharetra, at rutrum odio varius.</p>
+  <p class="mb-3">Ut molestie pulvinar auctor. Suspendisse arcu augue, hendrerit quis suscipit quis, accumsan non neque. Integer ut diam dapibus, tincidunt mauris ac, ultrices nibh. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Pellentesque tempus sem urna, eu molestie augue tristique a. Nulla consectetur metus id orci pellentesque, id finibus leo tincidunt.</p>
+  <p class="mb-3">Maecenas hendrerit nisi nisi. Maecenas pretium dignissim dolor, nec varius sem consequat non. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+  <p class="mb-3">Nunc ut orci id mauris congue fermentum vitae fermentum elit. Fusce imperdiet elementum mauris eu mattis. Nulla ullamcorper ipsum nec libero mollis suscipit. Aenean ut aliquam diam, ut pretium lacus. Nullam ac finibus augue, non bibendum turpis. Aliquam leo est, finibus id hendrerit at, pellentesque quis nibh.</p>
+</div>
+
+<app-dialog-footer>
+  <ng-container buttons>
+    <button mat-flat-button mat-dialog-close>Cancel</button>
+    <button
+      mat-flat-button
+      color="primary"
+      [mat-dialog-close]="true">
+      Save
+    </button>
+  </ng-container>
+</app-dialog-footer>

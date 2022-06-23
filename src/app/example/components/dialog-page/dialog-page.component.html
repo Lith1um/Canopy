@@ -1,0 +1,46 @@
+<app-page-container>
+  <article class="max-w-full prose lg:prose-xl mb-6">
+    <h2>Dialogs</h2>
+    <p>This section contains example dialogs that can be configured using a dialog service. Various options can be configured, such as:</p>
+    <ul>
+      <li>Dialog size</li>
+      <li>Auto height</li>
+      <li>Maximise window</li>
+      <li>Header/Footer buttons</li>
+      <li>Custom content</li>
+    </ul>
+    <p>See an example below for using showing a dialog:</p>
+    <pre>
+      <code>{{ dialogCode }}</code>
+    </pre>
+    <h4>Example Dialogs</h4>
+  </article>
+
+  <div class="my-4">
+    <p class="mb-3">Basic Dialog</p>
+    <button mat-flat-button color="primary" (click)="openBasicDialog()">
+      Open Basic Dialog
+    </button>
+  </div>
+
+  <div class="my-4">
+    <p class="mb-3">Custom Dialog</p>
+    <button mat-flat-button color="primary" (click)="openCustomDialog()">
+      Open Custom Dialog
+    </button>
+  </div>
+
+  <div class="my-4">
+    <p class="mb-3">Confirm Dialog</p>
+    <button mat-flat-button color="primary" (click)="openConfirmDialog()">
+      Open Confirm Dialog
+    </button>
+  </div>
+
+  <div class="my-4">
+    <p class="mb-3">Delete Dialog</p>
+    <button mat-flat-button color="warn" (click)="openDeleteDialog()">
+      Open Delete Dialog
+    </button>
+  </div>
+</app-page-container>

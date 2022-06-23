@@ -1,0 +1,18 @@
+<app-dialog-header
+  [title]="title"
+  [id]="id"
+  [canMaximise]="canMaximise"
+  (closed)="close()">
+  <ng-content prefix select="[header-prefix]"></ng-content>
+  <ng-content buttons select="[header-buttons]"></ng-content>
+  <ng-content content select="[header-content]"></ng-content>
+</app-dialog-header>
+
+<div mat-dialog-content [ngClass]="classes">
+  <ng-content select="[content]"></ng-content>
+</div>
+
+<app-dialog-footer>
+  <ng-content actions select="[actions]"></ng-content>
+  <ng-content buttons select="[buttons]"></ng-content>
+</app-dialog-footer>

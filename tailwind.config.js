@@ -19,6 +19,7 @@ module.exports = {
             pre: {
               backgroundColor: '#1e293b',
               padding: '0 24px !important',
+              margin: '24px 0 !important',
               lineHeight: '24px !important'
             }
           }

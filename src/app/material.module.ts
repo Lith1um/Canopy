@@ -6,8 +6,12 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
-import { TextFieldModule } from '@angular/cdk/text-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatDialogModule, MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/dialog';
+import { MatTooltipModule } from '@angular/material/tooltip';
+
+import { DragDropModule } from '@angular/cdk/drag-drop';
+import { TextFieldModule } from '@angular/cdk/text-field';
 
 import { CustomDateAdapter } from './custom-date-adapter';
 import { DateAdapter, MAT_DATE_FORMATS } from '@angular/material/core';
@@ -21,7 +25,11 @@ import { DateAdapter, MAT_DATE_FORMATS } from '@angular/material/core';
     MatMenuModule,
     MatButtonToggleModule,
     MatInputModule,
-    TextFieldModule
+    MatDialogModule,
+    MatTooltipModule,
+
+    TextFieldModule,
+    DragDropModule
   ],
   exports: [
     MatToolbarModule,
@@ -31,11 +39,16 @@ import { DateAdapter, MAT_DATE_FORMATS } from '@angular/material/core';
     MatMenuModule,
     MatButtonToggleModule,
     MatInputModule,
-    TextFieldModule
+    MatDialogModule,
+    MatTooltipModule,
+
+    TextFieldModule,
+    DragDropModule
   ],
   declarations: [],
   providers: [
     CustomDateAdapter,
+    { provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: { panelClass: 'mat-dialog-override' } },
     { provide: DateAdapter, useClass: CustomDateAdapter },
     { provide: MAT_DATE_FORMATS,
       useValue: {

@@ -21,10 +21,17 @@ export class AppComponent {
     },
     {
       id: 'form-example',
-      title: 'Form Example',
+      title: 'Form Examples',
       type: 'item',
       url: 'form-example',
       matIcon: 'edit_note'
+    },
+    {
+      id: 'dialog-example',
+      title: 'Dialog Examples',
+      type: 'item',
+      url: 'dialog-example',
+      matIcon: 'web_asset'
     }
   ];
 

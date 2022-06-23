@@ -1,0 +1,19 @@
+<app-dialog-header [title]="title" [id]="id">
+</app-dialog-header>
+
+<mat-dialog-content>
+  <p class="m-0 whitespace-pre-line">{{ message }}</p>
+</mat-dialog-content>
+
+<app-dialog-footer>
+  <ng-container buttons>
+    <button mat-flat-button mat-dialog-close>Cancel</button>
+    <button
+      mat-flat-button
+      color="primary"
+      [class.bg-red-500]="type === 'delete'"
+      [mat-dialog-close]="true">
+      {{ confirmText }}
+    </button>
+  </ng-container>
+</app-dialog-footer>

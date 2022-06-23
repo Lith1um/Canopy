@@ -1,4 +1,8 @@
 export * from './color-picker/color-picker.component';
+export * from './confirm-dialog/confirm-dialog.component';
+export * from './dialog-footer/dialog-footer.component';
+export * from './dialog-header/dialog-header.component';
+export * from './dialog-maximise/dialog-maximise.component';
 export * from './formly/formly-button-toggle-type/formly-button-toggle-type.component';
 export * from './formly/formly-color-type/formly-color-type.component';
 export * from './formly/formly-repeat-section-type/formly-repeat-section-type.component';
@@ -15,3 +19,4 @@ export * from './navigation/vertical/components/collapsible/collapsible.componen
 export * from './navigation/vertical/components/group/group.component';
 export * from './navigation/vertical/components/separator/separator.component';
 export * from './page-container/page-container.component';
+export * from './simple-dialog/simple-dialog.component';

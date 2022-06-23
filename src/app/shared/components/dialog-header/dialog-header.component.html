@@ -1,0 +1,29 @@
+<div
+  mat-dialog-title
+  class="bg-white"
+  cdkDrag
+  [cdkDragDisabled]="!dialogRef"
+  cdkDragRootElement=".cdk-overlay-pane"
+  cdkDragHandle>
+  <div class="flex w-full items-center justify-between gap-4">
+    <div class="flex items-center gap-2 truncate">
+      <ng-content select="[prefix]"></ng-content>
+      <span class="truncate">
+        {{ title }}
+        <span *ngIf="id" class="font-normal text-sm text-gray-400">#{{ id }}</span>
+      </span>
+    </div>
+    <div class="flex items-center gap-2">
+      <ng-content select="[buttons]"></ng-content>
+      <app-dialog-maximise *ngIf="dialogRef && canMaximise">
+      </app-dialog-maximise>
+      <button mat-icon-button tabindex="-1" aria-label="Close dialog" (click)="close()">
+        <mat-icon>close</mat-icon>
+      </button>
+    </div>
+  </div>
+  <div class="w-full font-normal">
+    <ng-content select="[content]"></ng-content>
+  </div>
+</div>
+<div class="w-full border-b"></div>
