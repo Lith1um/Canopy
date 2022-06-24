@@ -13,6 +13,9 @@ export class ResizeIframeComponent implements AfterViewInit, OnChanges {
   @Input()
   iframeUrl: string;
 
+  @Input()
+  height = 800;
+
   url: SafeResourceUrl;
 
   mouseDown = false;

@@ -1,7 +1,7 @@
 <div #container class="w-full max-w-full" (document:mouseup)="released()" (mousemove)="resize($event)">
-  <div class="relative select-none max-w-full" [style.width.px]="width">
-    <div class="relative w-full overflow-hidden rounded-lg ring-1 ring-slate-900/10">
-      <iframe #frame class="h-[800px]" style="width: inherit" [src]="url">
+  <div class="relative select-none max-w-full" [style.height.px]="height" [style.width.px]="width">
+    <div class="h-full relative w-full overflow-hidden rounded-lg ring-1 ring-slate-900/10">
+      <iframe #frame class="origin-top-left scale-75 w-[133.33333%] h-[133.33333%] min-w-[300px]" style="width: inherit" [src]="url">
       </iframe>
       <div class="absolute bg-transparent inset-0 z-10"></div>
     </div>
