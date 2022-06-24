@@ -67,7 +67,7 @@ export class JsonComponent implements OnInit, OnChanges {
         let themeClass = 'text-blue-500';
         if (/^"/.test(match)) {
           if (/:$/.test(match)) {
-            themeClass = 'text-gray-300';
+            themeClass = 'text-gray-200';
           } else {
             themeClass = 'text-green-500';
           }

@@ -20,4 +20,5 @@ export * from './navigation/vertical/components/collapsible/collapsible.componen
 export * from './navigation/vertical/components/group/group.component';
 export * from './navigation/vertical/components/separator/separator.component';
 export * from './page-container/page-container.component';
+export * from './resize-iframe/resize-iframe.component';
 export * from './simple-dialog/simple-dialog.component';

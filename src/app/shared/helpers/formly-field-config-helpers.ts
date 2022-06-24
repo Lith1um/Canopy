@@ -790,7 +790,7 @@ export function fcDenseForm(...fields: FormlyFieldConfig[]): FormlyFieldConfig {
 
 export function fcGridRow(...fields: FormlyFieldConfig[]): FormlyFieldConfig {
   return {
-    fieldGroupClassName: `grid justify-items-stretch items-start gap-x-4 grid-cols-1 md:grid-cols-auto`,
+    fieldGroupClassName: `grid justify-items-stretch items-start gap-x-4 grid-cols-1 sm:grid-cols-auto`,
     fieldGroup: fields
   };
 }

@@ -13,7 +13,7 @@
     
     .mat-form-field-wrapper {
 
-        @apply mt-6;
+        @apply mt-0 sm:mt-6;
 
         .mat-form-field-flex {
             @apply items-center #{'!important'};
@@ -468,7 +468,7 @@
     &.mat-form-field-type-toggle {
 
         .mat-form-field-wrapper {
-            @apply mt-4 text-sm #{'!important'};
+            @apply mt-0 sm:mt-4 text-sm #{'!important'};
         }
     }
 
@@ -582,7 +582,7 @@
       &.mat-form-field-type-toggle {
 
           .mat-form-field-wrapper {
-              @apply mt-4 text-sm #{'!important'};
+              @apply mt-0 sm:mt-4 text-sm #{'!important'};
           }
       }
 
@@ -698,7 +698,7 @@
         &.mat-form-field-type-toggle {
     
             .mat-form-field-wrapper {
-                @apply mt-4 text-sm #{'!important'};
+                @apply mt-0 sm:mt-4 text-sm #{'!important'};
             }
         }
     
