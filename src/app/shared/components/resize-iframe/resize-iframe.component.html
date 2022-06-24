@@ -1,11 +1,23 @@
-<div #container class="w-full max-w-full" (document:mouseup)="released()" (mousemove)="resize($event)">
+<div
+  #container
+  class="w-full max-w-full"
+  (document:touchend)="released()"
+  (touchmove)="resize($event.touches[0].clientX)"
+  (document:mouseup)="released()"
+  (mousemove)="resize($event.pageX)">
   <div class="relative select-none max-w-full" [style.height.px]="height" [style.width.px]="width">
     <div class="h-full relative w-full overflow-hidden rounded-lg ring-1 ring-slate-900/10">
-      <iframe #frame class="origin-top-left scale-75 w-[133.33333%] h-[133.33333%] min-w-[300px]" style="width: inherit" [src]="url">
+      <iframe
+        #frame class="origin-top-left scale-75 w-[133.33333%] h-[133.33333%] min-w-[300px]"
+        style="width: inherit"
+        [src]="url">
       </iframe>
       <div class="absolute bg-transparent inset-0 z-10"></div>
     </div>
-    <div class="absolute inset-y-0 left-full hidden cursor-ew-resize items-center px-2 sm:flex" (mousedown)="clicked($event)">
+    <div
+      class="absolute inset-y-0 left-full hidden cursor-ew-resize items-center px-2 sm:flex"
+      (mousedown)="clicked($event.pageX)"
+      (touchstart)="clicked($event.touches[0].clientX)">
       <div class="h-8 w-1.5 rounded-full bg-slate-400"></div>
     </div>
   </div>

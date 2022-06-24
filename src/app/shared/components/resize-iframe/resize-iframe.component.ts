@@ -37,9 +37,9 @@ export class ResizeIframeComponent implements AfterViewInit, OnChanges {
     this.changeDetector.detectChanges();
   }
 
-  clicked(e: MouseEvent): void {
+  clicked(pageX: number): void {
     this.mouseDown = true;
-    this.currentPosition = e.pageX;
+    this.currentPosition = pageX;
   }
 
   released(): void {
@@ -47,7 +47,7 @@ export class ResizeIframeComponent implements AfterViewInit, OnChanges {
     this.currentPosition = undefined;
   }
 
-  resize(e: MouseEvent): void {
+  resize(pageX: number): void {
     if (!this.mouseDown || !this.currentPosition) {
       return;
     }
@@ -55,9 +55,9 @@ export class ResizeIframeComponent implements AfterViewInit, OnChanges {
     if (this.width > this.container.nativeElement.offsetWidth) {
       this.width = this.container.nativeElement.offsetWidth;
     } else {
-      this.width -= this.currentPosition - e.pageX;
+      this.width -= this.currentPosition - pageX;
     }
-    this.currentPosition = e.pageX;
+    this.currentPosition = pageX;
   }
 
 }
