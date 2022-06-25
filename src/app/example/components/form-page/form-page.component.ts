@@ -53,7 +53,7 @@ fcTextInput(
     return {
       text: 'some text',
       textarea: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque semper vulputate sagittis. Sed sem lorem, efficitur sit amet elementum at, suscipit nec dui.',
-      colour: '#0084C7',
+      colour: '#673AB7',
       checkbox: false,
       dateDisabled: '2022-06-12',
       toggle: true,

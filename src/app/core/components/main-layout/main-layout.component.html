@@ -3,7 +3,13 @@
   <app-toolbar [title]="title"></app-toolbar>
   
   <div class="relative flex-auto">
-    <app-layout [navigationItems]="items" menuTitle="Menu">
+    <app-layout [navigationItems]="items">
+      <div sidebar class="mt-8 px-4 py-8">
+        <img class="mx-auto h-16 w-auto mb-2" src="assets/images/angular.png" alt="Workflow" />
+        <p class="text-center">Angular Template Library</p>
+        <p class="text-center text-xs text-gray-400">Let's you focus on the next big thing.</p>
+      </div>
+
       <ng-container content>
         <router-outlet style="display: none;"></router-outlet>
       </ng-container>

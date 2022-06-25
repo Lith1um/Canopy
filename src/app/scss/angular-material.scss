@@ -77,7 +77,7 @@
 
           /* Border color */
           .mat-form-field-flex {
-              @apply border-sky-500 #{'!important'};
+              @apply border-violet-500 #{'!important'};
 
               .mat-form-field-infix {
 
@@ -86,7 +86,7 @@
                     .mat-form-field-label {
 
                         .mat-form-field-required-marker {
-                            @apply text-sky-500 #{'!important'};
+                            @apply text-violet-500 #{'!important'};
                         }
                     }
                 }
@@ -403,7 +403,7 @@
                       backface-visibility: hidden;
                       transition: none;
                       font-weight: 500;
-                      @apply text-gray-800 #{'!important'};
+                      @apply text-gray-800 dark:text-gray-300 #{'!important'};
                   }
               }
           }
@@ -706,10 +706,10 @@
             .mat-form-field-wrapper {
 
                 .mat-form-field-flex {
-                    @apply border-sky-500 bg-white #{'!important'};
+                    @apply border-violet-500 bg-white #{'!important'};
 
                     &:hover {
-                        @apply border-sky-500 bg-white #{'!important'};
+                        @apply border-violet-500 bg-white #{'!important'};
 
                         .mat-form-field-infix {
 
@@ -718,7 +718,7 @@
                                 .mat-form-field-label {
             
                                     .mat-form-field-required-marker {
-                                        @apply text-sky-500 #{'!important'};
+                                        @apply text-violet-500 #{'!important'};
                                     }
                                 }
                             }
@@ -788,7 +788,6 @@
 
                 &:hover {
                     @apply border-gray-300 bg-white #{'!important'};
-                    // TODO: change for checkbox and toggle
 
                     .mat-form-field-prefix,
                     .mat-form-field-suffix,
@@ -867,7 +866,7 @@
                         @apply pl-2 -top-4 text-xs;
 
                         .mat-form-field-label {
-                            @apply text-gray-500 #{'!important'};
+                            @apply text-gray-500 dark:text-gray-400 #{'!important'};
 
                             .mat-form-field-required-marker {
                                 @apply text-transparent;
@@ -888,7 +887,7 @@
 .mat-dialog-override {
     mat-dialog-container,
     .mat-dialog-container {
-        @apply p-0 rounded-lg;
+        @apply p-0 rounded-lg dark:bg-slate-700 dark:text-gray-100;
         height: unset;
 
         > :first-child {
@@ -910,7 +909,7 @@
 
         mat-dialog-actions,
         *[mat-dialog-actions] {
-            @apply box-border border-t m-0 py-3 px-4 flex w-full items-center;
+            @apply box-border border-t dark:border-slate-600 m-0 py-3 px-4 flex w-full items-center;
             min-height: unset !important;
 
             .mat-button-base+.mat-button-base {
@@ -941,6 +940,10 @@
     @apply w-full #{'!important'};
 }
 
+.mat-checkbox-frame {
+  @apply dark:border-gray-300 #{'!important'};
+}
+
 .mat-tooltip {
     @apply leading-normal;
 }
@@ -951,6 +954,40 @@
 
 .mat-tab-body-wrapper {
     @apply flex-1 #{'!important'};
+}
+
+.mat-select-panel,
+.mat-datepicker-content,
+.mat-button-toggle {
+  @apply dark:bg-slate-800 #{'!important'};
+}
+
+.mat-option,
+.mat-datepicker-content,
+.mat-calendar-body-cell-content,
+.mat-calendar-table-header,
+.mat-calendar-body-label,
+.mat-calendar-next-button,
+.mat-calendar-previous-button,
+.mat-button-toggle {
+  @apply dark:text-gray-100 #{'!important'};
+}
+
+.mat-calendar-arrow {
+  @apply dark:fill-current #{'!important'};
+}
+
+.mat-calendar-body-today,
+.mat-button-toggle-group {
+  @apply dark:border-slate-600 #{'!important'};
+}
+
+.mat-button-toggle + .mat-button-toggle {
+  @apply dark:border-l-slate-600 #{'!important'};
+}
+
+.mat-button-toggle-checked {
+  @apply dark:bg-slate-500 #{'!important'};
 }
 
 // Icons

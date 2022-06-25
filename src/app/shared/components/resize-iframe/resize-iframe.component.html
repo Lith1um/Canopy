@@ -6,7 +6,7 @@
   (document:mouseup)="released()"
   (mousemove)="resize($event.pageX)">
   <div class="relative select-none max-w-full" [style.height.px]="height" [style.width.px]="width">
-    <div class="h-full relative w-full overflow-hidden rounded-lg ring-1 ring-slate-900/10">
+    <div class="h-full relative w-full overflow-hidden rounded-lg ring-1 ring-slate-900/10 dark:ring-slate-400">
       <iframe
         #frame class="origin-top-left scale-75 w-[133.33333%] h-[133.33333%] min-w-[300px]"
         style="width: inherit"

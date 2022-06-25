@@ -6,7 +6,7 @@ import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout';
 import { NavigationItemModel } from '@shared/models';
 
 // Services
-import { LayoutService } from '@core/services';
+import { ClientStateService, DarkMode, LayoutService } from '@core/services';
 
 @Component({
   selector: 'app-layout',
@@ -26,9 +26,12 @@ export class LayoutComponent implements OnInit {
 
   drawerMode: 'over' | 'side' = 'side';
 
+  darkMode = DarkMode;
+
   constructor(
     public layoutService: LayoutService,
-    public breakpointObserver: BreakpointObserver) {}
+    public clientState: ClientStateService,
+    private breakpointObserver: BreakpointObserver) {}
 
   ngOnInit(): void {
     this.breakpointObserver
@@ -49,6 +52,10 @@ export class LayoutComponent implements OnInit {
     if (this.layoutService.mobileScreen) {
       this.layoutService.closeMenu();
     }
+  }
+
+  setDarkMode(mode: DarkMode): void {
+    this.clientState.darkMode = mode;
   }
 
 }

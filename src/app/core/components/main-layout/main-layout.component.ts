@@ -14,7 +14,7 @@ export class MainLayoutComponent {
       id: 'home',
       title: 'Home',
       type: 'item',
-      url: '/',
+      url: '/app',
       exactMatch: true,
       matIcon: 'home'
     },

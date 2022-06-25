@@ -8,12 +8,13 @@ A project designed to make building new apps in angular as easy as possible.
  - TailwindCSS
  - Moment
  - ngx-Formly
+ - ngx-webstorage
  - Lodash
  - ngx-Colours
 
 ## To-Do
 
- - login page?
+ - dark mode
  - auth support?
  - crud API support?
  - spectator/testing library

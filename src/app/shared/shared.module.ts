@@ -26,7 +26,6 @@ import {
   DialogMaximiseComponent,
   SimpleDialogComponent,
   ConfirmDialogComponent,
-  LoginComponent,
   ResizeIframeComponent
 } from '@shared/components';
 
@@ -70,7 +69,6 @@ import { ConfirmDialogService, DialogService, DialogSizeStateService } from '@sh
     VerticalNavigationGroupItemComponent,
     VerticalNavigationSeparatorComponent,
     JsonComponent,
-    LoginComponent,
     FormlyButtonToggleTypeComponent,
     FormlyColorTypeComponent,
     FormlyTextareaTypeComponent,
@@ -111,7 +109,6 @@ import { ConfirmDialogService, DialogService, DialogSizeStateService } from '@sh
     VerticalNavigationGroupItemComponent,
     VerticalNavigationSeparatorComponent,
     JsonComponent,
-    LoginComponent,
     PageContainerComponent,
     ConfirmDialogComponent,
     DialogFooterComponent,
