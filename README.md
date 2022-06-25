@@ -14,7 +14,6 @@ A project designed to make building new apps in angular as easy as possible.
 
 ## To-Do
 
- - dark mode
  - auth support?
  - crud API support?
  - spectator/testing library
