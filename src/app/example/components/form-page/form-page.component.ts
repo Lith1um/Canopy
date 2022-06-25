@@ -88,6 +88,7 @@ fcTextInput(
           'select',
           'Select',
           {
+            placeholder: 'Select placeholder',
             options: [
               { id: 1, name: 'Option 1' },
               { id: 2, name: 'Option 2' },
@@ -114,7 +115,10 @@ fcTextInput(
         fcDatepicker(
           'date',
           'Date',
-          {}
+          {
+            placeholder: 'DD/MM/YYYY',
+            hintText: 'some text to check colours in dark mode'
+          }
         )
       ),
       fcGridRow(

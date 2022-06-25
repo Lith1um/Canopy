@@ -30,36 +30,8 @@
       ></app-vertical-navigation>
 
       <div class="w-full absolute bottom-0">
-        <div class="px-4 flex w-full items-center gap-2">
-          <div class="flex-1 border-t border-gray-300"></div>
-          <span class="text-sm text-gray-400">Scheme</span>
-          <div class="flex-1 border-t border-gray-300"></div>
-        </div>
-        <div class="px-4 my-4 w-full flex flex-wrap items-center gap-2">
-          <div
-            class="flex-1 cursor-pointer bg-gray-100 hover:bg-gray-200 text-sm font-medium text-gray-700 flex items-center justify-center gap-2 p-3 md:py-2 rounded-md"
-            [ngClass]="{'bg-violet-800 hover:bg-violet-800 text-gray-100': clientState.darkMode === darkMode.Light}"
-            (click)="setDarkMode(darkMode.Light)">
-            <mat-icon class="icon-size-5">light_mode</mat-icon>
-            Light
-          </div>
-
-          <div
-            class="flex-1 cursor-pointer bg-gray-100 hover:bg-gray-200 text-sm font-medium text-gray-700 flex items-center justify-center gap-2 p-3 md:py-2 rounded-md"
-            [ngClass]="{'bg-violet-800 hover:bg-violet-800 text-gray-100': clientState.darkMode === darkMode.Dark}"
-            (click)="setDarkMode(darkMode.Dark)">
-            <mat-icon class="icon-size-5">dark_mode</mat-icon>
-            Dark
-          </div>
-
-          <div
-            class="flex-1 cursor-pointer bg-gray-100 hover:bg-gray-200 text-sm font-medium text-gray-700 flex items-center justify-center gap-2 p-3 md:py-2 rounded-md"
-            [ngClass]="{'bg-violet-800 hover:bg-violet-800 text-gray-100': clientState.darkMode === darkMode.System}"
-            (click)="setDarkMode(darkMode.System)">
-            <mat-icon class="icon-size-5">bolt</mat-icon>
-            Auto
-          </div>
-        </div>
+        <ng-content select="[footer]">
+        </ng-content>
       </div>
     </mat-drawer>
 

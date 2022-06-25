@@ -16,7 +16,7 @@
         @apply mt-0 sm:mt-6;
 
         .mat-form-field-flex {
-            @apply items-center #{'!important'};
+            @apply items-center bg-transparent #{'!important'};
         }
     }
   }
@@ -59,13 +59,13 @@
   }
 
   /* Focused */
-  &.mat-focused {
+  &.mat-focused:not(.mat-form-field-type-checkbox):not(.mat-form-field-type-toggle) {
 
       .mat-form-field-wrapper {
 
           /* Background color */
           .mat-form-field-flex {
-              @apply bg-white #{'!important'};
+              @apply bg-white dark:bg-slate-800 #{'!important'};
           }
       }
   }
@@ -173,8 +173,7 @@
           }
 
           .dark & {
-              background-color: rgba(0, 0, 0, 0.05) !important;
-              @apply border-gray-500 #{'!important'};
+              @apply border-gray-500 bg-slate-800 #{'!important'};
           }
 
           .mat-form-field-prefix {
@@ -356,7 +355,7 @@
 
                           .mat-select-placeholder {
                               color: rgba(0, 0, 0, 0.42) !important;
-                              -webkit-text-fill-color: rgba(0, 0, 0, 0.42) !important;
+                              @apply dark:text-gray-400 #{'!important'};
                           }
 
                           .mat-select-value-text {
@@ -675,10 +674,10 @@
                 .mat-form-field-wrapper {
 
                     .mat-form-field-flex {
-                        @apply bg-transparent #{'!important'};
+                        @apply bg-transparent dark:bg-transparent #{'!important'};
 
                         &:hover {
-                          @apply bg-transparent #{'!important'};
+                          @apply bg-transparent dark:bg-transparent #{'!important'};
                         }
                     }
                 }
@@ -686,10 +685,12 @@
 
             .mat-form-field-wrapper {
     
-              .mat-form-field-flex {    
-                  &:hover {
-                    @apply bg-transparent #{'!important'};
-                  }
+              .mat-form-field-flex {
+                @apply bg-transparent dark:bg-transparent #{'!important'};
+
+                &:hover {
+                  @apply bg-transparent dark:bg-transparent #{'!important'};
+                }
               }
           }
         }
@@ -706,10 +707,10 @@
             .mat-form-field-wrapper {
 
                 .mat-form-field-flex {
-                    @apply border-violet-500 bg-white #{'!important'};
+                    @apply border-violet-500 bg-white dark:bg-slate-800 #{'!important'};
 
                     &:hover {
-                        @apply border-violet-500 bg-white #{'!important'};
+                        @apply border-violet-500 bg-white dark:bg-slate-800 #{'!important'};
 
                         .mat-form-field-infix {
 
@@ -744,7 +745,7 @@
         &.mat-form-field-invalid {
             .mat-form-field-wrapper {
               .mat-form-field-flex {
-                    @apply border-red-500 bg-white #{'!important'};
+                    @apply border-red-500 bg-white dark:bg-slate-800 #{'!important'};
 
                     &:hover {
                         @apply border-red-500 #{'!important'};
@@ -787,7 +788,7 @@
                 padding: 0 8px;
 
                 &:hover {
-                    @apply border-gray-300 bg-white #{'!important'};
+                    @apply border-gray-300 bg-white dark:bg-slate-800 #{'!important'};
 
                     .mat-form-field-prefix,
                     .mat-form-field-suffix,
@@ -883,6 +884,15 @@
     }
 }
 
+.mat-input-element {
+  @apply dark:placeholder-slate-400 #{'!important'};
+}
+
+.mat-input-element:disabled,
+.mat-button-disabled {
+  @apply dark:text-gray-400 #{'!important'};
+}
+
 // This fixes https://github.com/angular/components/issues/4609
 .mat-dialog-override {
     mat-dialog-container,
@@ -923,6 +933,14 @@
     @apply truncate #{'!important'};
 }
 
+.mat-slide-toggle-bar {
+  @apply dark:bg-slate-700 #{'!important'};
+}
+
+.mat-slide-toggle-thumb {
+  @apply dark:bg-slate-500 #{'!important'};
+}
+
 // supports multiline checkbox text
 .mat-checkbox-layout{
     @apply w-full whitespace-normal break-all #{'!important'};
@@ -941,7 +959,7 @@
 }
 
 .mat-checkbox-frame {
-  @apply dark:border-gray-300 #{'!important'};
+  @apply dark:border-gray-500 #{'!important'};
 }
 
 .mat-tooltip {
@@ -969,7 +987,8 @@
 .mat-calendar-body-label,
 .mat-calendar-next-button,
 .mat-calendar-previous-button,
-.mat-button-toggle {
+.mat-button-toggle,
+.mat-select-arrow {
   @apply dark:text-gray-100 #{'!important'};
 }
 
@@ -987,7 +1006,7 @@
 }
 
 .mat-button-toggle-checked {
-  @apply dark:bg-slate-500 #{'!important'};
+  @apply dark:bg-slate-600 #{'!important'};
 }
 
 // Icons

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ClientStateService, DarkMode } from '@core/services';
 import { NavigationItemModel } from '@shared/models';
 
 @Component({
@@ -8,6 +9,9 @@ import { NavigationItemModel } from '@shared/models';
 export class MainLayoutComponent {
 
   title = 'Angular Template Project';
+
+  darkMode = DarkMode;
+  constructor(public clientState: ClientStateService) {}
 
   items: NavigationItemModel[] = [
     {
@@ -40,5 +44,9 @@ export class MainLayoutComponent {
       matIcon: 'login'
     }
   ];
+
+  setDarkMode(mode: DarkMode): void {
+    this.clientState.darkMode = mode;
+  }
 
 }

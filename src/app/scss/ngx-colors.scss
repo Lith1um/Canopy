@@ -1,9 +1,23 @@
 // overriding styles for ngx-colors
 .opened {
+  @apply dark:bg-slate-800 #{'!important'};
+
   .circle.button, .round-button, .circle.wrapper:not(.color) {
     display: flex;
     align-items: center;
     justify-content: center;
+
+    .add {
+      @apply dark:text-gray-300 #{'!important'};
+
+      svg {
+        @apply fill-current;
+      }
+    }
+  }
+
+  .circle.wrapper.color {
+    @apply bg-clip-content;
   }
 
   .hue-alpha .right {
