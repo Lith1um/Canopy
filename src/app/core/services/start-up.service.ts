@@ -12,9 +12,7 @@ export class StartUpService {
 
   initApp(): Promise<any> {
     return new Promise<void>((resolve) => {
-      console.log('startup');
       if (this.clientState.darkMode === null || this.clientState.darkMode === undefined) {
-        console.log('no local storage for dark mode');
         this.clientState.darkMode = DarkMode.System;
       }
       resolve();

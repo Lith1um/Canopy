@@ -131,7 +131,7 @@ app-vertical-navigation {
 
       /* Group */
       > app-vertical-navigation-group-item {
-        margin-top: 8px;
+        margin-top: 16px;
 
         &:first-child {
           margin-top: 0;
@@ -319,6 +319,11 @@ app-vertical-navigation {
             letter-spacing: 0.05em;
             text-transform: uppercase;
           }
+
+          .vertical-navigation-item-subtitle {
+            font-size: 11px;
+            line-height: 1.5;
+          }
         }
       }
     }
@@ -361,6 +366,10 @@ app-vertical-navigation-group-item {
 
         .vertical-navigation-item-title {
           @apply text-current opacity-80;
+        }
+
+        .vertical-navigation-item-subtitle {
+          @apply text-current opacity-50 dark:opacity-80;
         }
       }
     }
@@ -451,7 +460,11 @@ app-vertical-navigation-group-item {
       .vertical-navigation-item-title-wrapper {
 
         .vertical-navigation-item-title {
-          @apply opacity-100 text-black;
+          @apply opacity-100 text-current;
+        }
+
+        .vertical-navigation-item-title {
+          @apply opacity-80 text-current;
         }
       }
     }

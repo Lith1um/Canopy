@@ -23,25 +23,48 @@ export class MainLayoutComponent {
       matIcon: 'home'
     },
     {
-      id: 'form-example',
-      title: 'Form Examples',
-      type: 'item',
-      url: 'form-example',
-      matIcon: 'edit_note'
+      id: 'pages',
+      title: 'Pages',
+      subtitle: 'Custom made page designs',
+      type: 'group',
+      children: [
+        {
+          id: 'form-page',
+          title: 'Forms',
+          type: 'item',
+          url: 'form-page',
+          matIcon: 'edit_note'
+        },
+        {
+          id: 'login-page',
+          title: 'Login Screen',
+          type: 'item',
+          url: 'login-page',
+          matIcon: 'login'
+        }
+      ]
     },
     {
-      id: 'dialog-example',
-      title: 'Dialog Examples',
-      type: 'item',
-      url: 'dialog-example',
-      matIcon: 'web_asset'
-    },
-    {
-      id: 'login-example',
-      title: 'Login Example',
-      type: 'item',
-      url: 'login-example',
-      matIcon: 'login'
+      id: 'pages',
+      title: 'Pages',
+      subtitle: 'Building blocks of the UI & UX',
+      type: 'group',
+      children: [
+        {
+          id: 'dialogs',
+          title: 'Dialogs',
+          type: 'item',
+          url: 'dialogs',
+          matIcon: 'web_asset'
+        },
+        {
+          id: 'alerts',
+          title: 'Alerts',
+          type: 'item',
+          url: 'alerts',
+          matIcon: 'lightbulb'
+        }
+      ]
     }
   ];
 

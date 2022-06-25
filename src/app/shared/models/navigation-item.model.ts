@@ -5,6 +5,7 @@ export interface NavigationItemModel {
   id?: string;
   active?: boolean;
   title: string;
+  subtitle?: string;
   type: 'item' | 'group' | 'collapsible';
   translate?: string;
   matIcon?: string;

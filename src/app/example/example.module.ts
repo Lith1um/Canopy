@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { SharedModule } from '@shared/shared.module';
 import {
+  AlertPageComponent,
   BasicDialogComponent,
   CustomDialogComponent,
   DialogPageComponent,
@@ -16,6 +17,7 @@ import { ExampleRoutingModule } from './example-routing.module';
     SharedModule
   ],
   declarations: [
+    AlertPageComponent,
     BasicDialogComponent,
     CustomDialogComponent,
     DialogPageComponent,

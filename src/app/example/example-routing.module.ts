@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {
+  AlertPageComponent,
   DialogPageComponent,
   FormPageComponent,
   HomepageComponent,
@@ -13,16 +14,20 @@ const routes: Routes = [
     component: HomepageComponent
   },
   {
-    path: 'form-example',
+    path: 'form-page',
     component: FormPageComponent
   },
   {
-    path: 'dialog-example',
+    path: 'dialogs',
     component: DialogPageComponent
   },
   {
-    path: 'login-example',
+    path: 'login-page',
     component: LoginPageComponent
+  },
+  {
+    path: 'alerts',
+    component: AlertPageComponent
   }
 ];
 

@@ -1,3 +1,4 @@
+export * from './alert-page/alert-page.component';
 export * from './dialog-page/basic-dialog/basic-dialog.component';
 export * from './dialog-page/custom-dialog/custom-dialog.component';
 export * from './dialog-page/dialog-page.component';

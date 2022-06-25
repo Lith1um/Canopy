@@ -9,27 +9,30 @@
 
       <button
         mat-icon-button
+        tabindex="-1"
         class="sm:hidden absolute right-2 top-2 z-10"
         (click)="layoutService.closeMenu()">
         <mat-icon>close</mat-icon>
       </button>
 
-      <!-- Menu sidebar -->
-      <div *ngIf="menuTitle" class="mx-5 mt-10 mb-6 text-xl font-bold tracking-tighter">
-        {{ menuTitle }}
-      </div>
-
-      <ng-content select="[sidebar]">
-      </ng-content>
-
-      <app-vertical-navigation
-        *ngIf="navigationItems"
-        [autoCollapse]="autoCollapseMenu"
-        [navigation]="navigationItems"
-        (itemClicked)="handleNav()"
-      ></app-vertical-navigation>
-
-      <div class="w-full absolute bottom-0">
+      <div class="min-h-full flex flex-col">
+        <!-- Menu sidebar -->
+        <div *ngIf="menuTitle" class="mx-5 mt-10 mb-6 text-xl font-bold tracking-tighter">
+          {{ menuTitle }}
+        </div>
+  
+        <ng-content select="[sidebar]">
+        </ng-content>
+  
+        <div class="flex-1">
+          <app-vertical-navigation
+            *ngIf="navigationItems"
+            [autoCollapse]="autoCollapseMenu"
+            [navigation]="navigationItems"
+            (itemClicked)="handleNav()"
+          ></app-vertical-navigation>
+        </div>
+  
         <ng-content select="[footer]">
         </ng-content>
       </div>

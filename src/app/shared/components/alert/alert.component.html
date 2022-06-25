@@ -1,0 +1,21 @@
+<div [ngClass]="classList">
+
+  <!-- Icon -->
+  <div class="alert-icon">
+    <mat-icon>{{ icons[type] }}</mat-icon>
+  </div>
+
+  <!-- Content -->
+  <div class="alert-content">
+
+    <div class="alert-title">
+      <ng-content select="[alertTitle]"></ng-content>
+    </div>
+
+    <div class="alert-message">
+      <ng-content></ng-content>
+    </div>
+
+  </div>
+
+</div>

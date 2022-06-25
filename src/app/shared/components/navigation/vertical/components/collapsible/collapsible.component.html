@@ -16,6 +16,11 @@
       <div class="vertical-navigation-item-title">
         {{ item.title }}
       </div>
+      <ng-container *ngIf="item.subtitle">
+        <div class="vertical-navigation-item-subtitle text-gray-500">
+          {{item.subtitle}}
+        </div>
+      </ng-container>
     </div>
 
     <!-- Badge -->
