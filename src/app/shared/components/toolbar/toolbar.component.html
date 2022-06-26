@@ -4,7 +4,11 @@
       <button mat-icon-button (click)="layoutService.toggleMenu()">
         <mat-icon>menu</mat-icon>
       </button>
+
+      <ng-content select="[prefix]"></ng-content>
+      
       <div class="flex-1 truncate">
+        <ng-content select="[content]"></ng-content>
         {{ title }}
       </div>
 

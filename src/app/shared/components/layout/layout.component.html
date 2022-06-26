@@ -45,6 +45,8 @@
     <mat-drawer-content class="h-full flex flex-col min-h-min">
 
       <app-toolbar *ngIf="showToolbar" [title]="toolbarTitle">
+        <ng-content prefix select="[toolbarPrefix]"></ng-content>
+        <ng-content content select="[toolbarContent]"></ng-content>
         <ng-content buttons select="[toolbarButtons]"></ng-content>
       </app-toolbar>
 

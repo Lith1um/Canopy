@@ -36,6 +36,11 @@
       </div>
 
       <app-layout content [navigationItems]="items">
+
+        <div toolbarContent class="w-full flex items-center justify-center">
+          <img toolbarPrefix class="mr-2 w-8" src="assets/images/canopy-logo-1x.png"/>
+          <span class="hidden sm:block">Canopy</span>
+        </div>
   
         <ng-container toolbarButtons>
           <button mat-icon-button (click)="toggleSettingsMenu()">
