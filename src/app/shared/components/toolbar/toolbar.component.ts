@@ -1,6 +1,6 @@
 // Angular
 import { Component, Input, ViewEncapsulation } from '@angular/core';
-import { LayoutService } from '@core/services';
+import { LayoutService } from '@shared/services';
 
 @Component({
   selector: 'app-toolbar',

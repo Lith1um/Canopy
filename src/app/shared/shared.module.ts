@@ -28,7 +28,9 @@ import {
   ConfirmDialogComponent,
   ResizeIframeComponent,
   AlertComponent,
-  HighlightComponent
+  HighlightComponent,
+  LayoutComponent,
+  ToolbarComponent
 } from '@shared/components';
 
 // Formly
@@ -40,7 +42,7 @@ import { FormlySelectModule } from '@ngx-formly/core/select';
 
 import { NgxColorsModule } from 'ngx-colours';
 import { TimeMaskDirective } from '@shared/directives';
-import { ConfirmDialogService, DialogService, DialogSizeStateService } from '@shared/services';
+import { ConfirmDialogService, DialogService, DialogSizeStateService, LayoutService } from '@shared/services';
 
 @NgModule({
   imports: [
@@ -71,6 +73,7 @@ import { ConfirmDialogService, DialogService, DialogSizeStateService } from '@sh
     VerticalNavigationGroupItemComponent,
     VerticalNavigationSeparatorComponent,
     JsonComponent,
+    LayoutComponent,
     FormlyButtonToggleTypeComponent,
     FormlyColorTypeComponent,
     FormlyTextareaTypeComponent,
@@ -85,6 +88,7 @@ import { ConfirmDialogService, DialogService, DialogSizeStateService } from '@sh
     ResizeIframeComponent,
     AlertComponent,
     HighlightComponent,
+    ToolbarComponent,
 
     TimeMaskDirective
   ],
@@ -113,6 +117,7 @@ import { ConfirmDialogService, DialogService, DialogSizeStateService } from '@sh
     VerticalNavigationGroupItemComponent,
     VerticalNavigationSeparatorComponent,
     JsonComponent,
+    LayoutComponent,
     PageContainerComponent,
     ConfirmDialogComponent,
     DialogFooterComponent,
@@ -121,12 +126,14 @@ import { ConfirmDialogService, DialogService, DialogSizeStateService } from '@sh
     SimpleDialogComponent,
     ResizeIframeComponent,
     AlertComponent,
-    HighlightComponent
+    HighlightComponent,
+    ToolbarComponent
   ],
   providers: [
     ConfirmDialogService,
     DialogSizeStateService,
-    DialogService
+    DialogService,
+    LayoutService
   ],
 })
 export class SharedModule {}

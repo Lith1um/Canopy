@@ -1,4 +1,4 @@
-# Angular Template
+# Canopy.
 
 A project designed to make building new apps in angular as easy as possible.
 

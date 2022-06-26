@@ -1,52 +1,67 @@
 <div class="h-full w-full flex flex-col">
   
-  <app-toolbar [title]="title"></app-toolbar>
-  
   <div class="relative flex-auto">
-    <app-layout [navigationItems]="items">
-      <div sidebar class="mt-8 px-4 py-8">
-        <img class="mx-auto h-16 w-auto mb-2" src="assets/images/angular.png" alt="Workflow" />
-        <p class="text-center">Angular Template Library</p>
-        <p class="text-center text-xs text-gray-400">Let's you focus on the next big thing.</p>
-      </div>
-
-      <ng-container footer>
+    <app-layout #settingsLayout [showToolbar]="false" menuTitle="Settings" drawerMode="over" drawerPosition="end">
+      <div sidebar class="mt-4">
         <div class="px-4 flex w-full items-center gap-2">
           <div class="flex-1 border-t border-gray-300"></div>
-          <span class="text-sm text-gray-300">Scheme</span>
+          <span class="text-sm text-gray-300">Colour Scheme</span>
           <div class="flex-1 border-t border-gray-300"></div>
         </div>
-        <div class="px-4 mt-2 mb-4 w-full flex flex-wrap items-center gap-2">
+        <div class="px-4 mt-3 mb-4 w-full flex flex-wrap items-center gap-2">
           <div
-            class="flex-1 cursor-pointer bg-slate-100 hover:bg-slate-200 text-sm font-medium text-gray-700 flex items-center justify-center gap-2 p-3 md:py-2 rounded-md"
-            [ngClass]="{'bg-violet-800 hover:bg-violet-800 text-gray-100': clientState.darkMode === darkMode.Light}"
+            class="scheme-button"
+            [class.scheme-button--active]="clientState.darkMode === darkMode.Light"
             (click)="setDarkMode(darkMode.Light)">
             <mat-icon class="icon-size-5">light_mode</mat-icon>
             Light
           </div>
 
           <div
-            class="flex-1 cursor-pointer bg-slate-100 hover:bg-slate-200 text-sm font-medium text-gray-700 flex items-center justify-center gap-2 p-3 md:py-2 rounded-md"
-            [ngClass]="{'bg-violet-800 hover:bg-violet-800 text-gray-100': clientState.darkMode === darkMode.Dark}"
+            class="scheme-button"
+            [class.scheme-button--active]="clientState.darkMode === darkMode.Dark"
             (click)="setDarkMode(darkMode.Dark)">
             <mat-icon class="icon-size-5">dark_mode</mat-icon>
             Dark
           </div>
 
           <div
-            class="flex-1 cursor-pointer bg-slate-100 hover:bg-slate-200 text-sm font-medium text-gray-700 flex items-center justify-center gap-2 p-3 md:py-2 rounded-md"
-            [ngClass]="{'bg-violet-800 hover:bg-violet-800 text-gray-100': clientState.darkMode === darkMode.System}"
+            class="scheme-button"
+            [class.scheme-button--active]="clientState.darkMode === darkMode.System"
             (click)="setDarkMode(darkMode.System)">
             <mat-icon class="icon-size-5">bolt</mat-icon>
             Auto
           </div>
         </div>
-      </ng-container>
+      </div>
 
-      <ng-container content>
-        <router-outlet style="display: none;"></router-outlet>
-      </ng-container>
+      <app-layout content [navigationItems]="items">
+  
+        <ng-container toolbarButtons>
+          <button mat-icon-button (click)="toggleSettingsMenu()">
+            <mat-icon>settings</mat-icon>
+          </button>
+        </ng-container>
+  
+        <div sidebar class="mt-8 px-4 py-8">
+          <img class="mx-auto h-20 w-auto mb-4" src="assets/images/canopy-logo-4x.png" alt="Workflow" />
+          <p class="text-center">Canopy</p>
+          <p class="text-center text-xs text-gray-400">Let's you focus on the next big thing.</p>
+        </div>
+  
+        <ng-container content>
+          <router-outlet style="display: none;"></router-outlet>
+        </ng-container>
+
+        <div footer>
+          <div class="my-2 text-center text-xs text-gray-400">
+            <p>Alex Rayner ©2022</p>
+            <a class="block text-violet-600 dark:text-violet-400 underline" target="_blank" href="https://github.com/Lith1um/angular_template">Github</a>
+          </div>
+        </div>
+      </app-layout>
     </app-layout>
+
   </div>
 
 </div>

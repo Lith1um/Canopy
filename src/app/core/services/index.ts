@@ -1,6 +1,5 @@
 export * from './client-state.service';
 export * from './icon-registry.service';
-export * from './layout.service';
 export * from './navigation.service';
 export * from './start-up.service';
 export * from './utils.service';

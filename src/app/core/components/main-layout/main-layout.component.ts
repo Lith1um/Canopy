@@ -1,16 +1,19 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { ClientStateService, DarkMode } from '@core/services';
+import { LayoutComponent } from '@shared/components';
 import { NavigationItemModel } from '@shared/models';
 
 @Component({
   selector: 'app-main-layout',
-  templateUrl: './main-layout.component.html'
+  templateUrl: './main-layout.component.html',
+  styleUrls: ['./main-layout.component.scss']
 })
 export class MainLayoutComponent {
 
-  title = 'Angular Template Project';
+  @ViewChild('settingsLayout', { read: LayoutComponent }) settingsLayout: LayoutComponent;
 
   darkMode = DarkMode;
+
   constructor(public clientState: ClientStateService) {}
 
   items: NavigationItemModel[] = [
@@ -75,6 +78,10 @@ export class MainLayoutComponent {
       ]
     }
   ];
+
+  toggleSettingsMenu(): void {
+    this.settingsLayout.layoutService.toggleMenu();
+  }
 
   setDarkMode(mode: DarkMode): void {
     this.clientState.darkMode = mode;

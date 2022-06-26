@@ -4,9 +4,7 @@ import { Injectable } from '@angular/core';
 // rxjs
 import { BehaviorSubject, Observable } from 'rxjs';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class LayoutService {
 
   private _menuOpen = new BehaviorSubject<boolean>(true);

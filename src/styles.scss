@@ -17,6 +17,7 @@
   
   html {
     @apply scroll-smooth;
+    -webkit-font-smoothing: auto;
     font-feature-settings: 'salt';
   }
 
