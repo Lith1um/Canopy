@@ -1,8 +1,3 @@
 .separator {
-  margin: 8px 0;
-  height: 1px;
-  min-height: 1px;
-  max-height: 1px;
-  width: 100%;
-  background-color: rgba(0,0,0,0.12);
+  @apply my-2 w-full border-b dark:border-slate-600;
 }

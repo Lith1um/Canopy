@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService, ClientStateService, DarkMode } from '@core/services';
 import { LayoutComponent } from '@shared/components';
@@ -7,7 +7,8 @@ import { NavigationItemModel } from '@shared/models';
 @Component({
   selector: 'app-main-layout',
   templateUrl: './main-layout.component.html',
-  styleUrls: ['./main-layout.component.scss']
+  styleUrls: ['./main-layout.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class MainLayoutComponent {
 
@@ -70,6 +71,7 @@ export class MainLayoutComponent {
       id: 'components',
       title: 'Components',
       subtitle: 'UI elements for all your needs',
+      separator: true,
       type: 'group',
       children: [
         {
@@ -80,13 +82,16 @@ export class MainLayoutComponent {
           matIcon: 'lightbulb'
         }
       ]
+    },
+    {
+      id: 'logout',
+      title: 'Log out',
+      type: 'item',
+      url: '/login',
+      matIcon: 'logout',
+      function: () => this.authService.isAuthenticated = false
     }
   ];
-
-  logout(): void {
-    this.authService.isAuthenticated = false;
-    this.router.navigate(['/login']);
-  }
 
   toggleSettingsMenu(): void {
     this.settingsLayout.layoutService.toggleMenu();

@@ -38,34 +38,18 @@
       <app-layout content [navigationItems]="items">
 
         <div toolbarContent class="w-full flex items-center justify-center">
-          <img toolbarPrefix class="mr-2 w-8" src="assets/images/canopy-logo-1x.png"/>
+          <img toolbarPrefix class="mr-2 w-8" src="assets/images/canopy-logo-2-2x.png"/>
           <span class="hidden sm:block">Canopy</span>
         </div>
   
         <ng-container toolbarButtons>
-          <button mat-icon-button [matMenuTriggerFor]="menu">
-            <mat-icon>account_circle</mat-icon>
-          </button>
-          <mat-menu class="w-40" #menu="matMenu">
-            <div class="flex items-center hover:bg-transparent cursor-default" mat-menu-item disableRipple>
-              <span class="flex flex-col leading-none">
-                <span class="text-xs">Signed in as</span>
-                <span class="mt-0.5 text-sm font-medium">Alex Rayner</span>
-              </span>
-            </div>
-            <button mat-menu-item (click)="logout()">
-              <mat-icon class="mr-2">logout</mat-icon>
-              Log out
-            </button>
-          </mat-menu>
-
           <button mat-icon-button (click)="toggleSettingsMenu()">
             <mat-icon class="animate-spin-slow">settings</mat-icon>
           </button>
         </ng-container>
   
         <div sidebar class="mt-8 px-4 py-8">
-          <img class="mx-auto h-20 w-auto mb-4" src="assets/images/canopy-logo-4x.png" alt="Workflow" />
+          <img class="mx-auto h-20 w-auto mb-4" src="assets/images/canopy-logo-2-4x.png" alt="Workflow" />
           <p class="text-center">Canopy</p>
           <p class="text-center text-xs text-gray-400">Let's you focus on the next big thing.</p>
         </div>
@@ -81,6 +65,10 @@
           </div>
         </div>
       </app-layout>
+
+      <div footer class="pt-6 my-6 mx-8 border-t dark:border-slate-600">
+        <img class="mx-auto my-4 h-16 w-auto opacity-40" src="assets/images/canopy-logo-2-2x.png" alt="Workflow" />
+      </div>
     </app-layout>
 
   </div>
