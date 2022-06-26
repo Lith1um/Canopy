@@ -1,7 +1,9 @@
 <app-page-container>
   <article class="max-w-full prose dark:prose-dark mb-6">
     <h2>Dialogs</h2>
-    <p>This section contains example dialogs that can be configured using a dialog service. Various options can be configured, such as:</p>
+    <p>
+      One of the repetitive and tedious jobs in Angular is to create dialogs. With the introduction of a simple yet powerful <code>DialogService</code>, it is easy to create customized dialogs on-the-fly. Various options can be configured, such as:
+    </p>
     <ul>
       <li>Dialog size</li>
       <li>Auto height</li>
@@ -13,7 +15,7 @@
 
     <div class="example-container">
       <div class="title">
-        <h6>Example Dialogs</h6>
+        <h6>Standard Dialogs</h6>
       </div>
 
       <mat-tab-group [animationDuration]="'0ms'">
@@ -30,7 +32,50 @@
                 Open Custom Dialog
               </button>
             </div>
-          
+          </ng-template>
+        </mat-tab>
+
+        <mat-tab label="HTML">
+          <textarea
+            app-highlight
+            [lang]="'html'">
+            <button mat-flat-button color="primary" (click)="openBasicDialog()">
+              Open Basic Dialog
+            </button>
+
+            <button mat-flat-button color="primary" (click)="openCustomDialog()">
+              Open Custom Dialog
+            </button>
+          </textarea>
+        </mat-tab>
+
+        <mat-tab label="Typescript">
+          <textarea 
+            app-highlight
+            [lang]="'typescript'">
+constructor(private dialogService: DialogService) {}
+
+openBasicDialog(): void {
+  this.dialogService.open(BasicDialogComponent, { size: DialogSize.Small });
+}
+
+openCustomDialog(): void {
+  this.dialogService.open(CustomDialogComponent, { autoHeight: false });
+}
+          </textarea>
+        </mat-tab>
+
+      </mat-tab-group>
+    </div>
+
+    <div class="example-container">
+      <div class="title">
+        <h6>Confirm Dialogs</h6>
+      </div>
+
+      <mat-tab-group [animationDuration]="'0ms'">
+        <mat-tab label="Preview">
+          <ng-template matTabContent>          
             <div class="my-6">
               <button mat-flat-button color="primary" (click)="openConfirmDialog()">
                 Open Confirm Dialog
@@ -49,14 +94,6 @@
           <textarea
             app-highlight
             [lang]="'html'">
-            <button mat-flat-button color="primary" (click)="openBasicDialog()">
-              Open Basic Dialog
-            </button>
-
-            <button mat-flat-button color="primary" (click)="openCustomDialog()">
-              Open Custom Dialog
-            </button>
-
             <button mat-flat-button color="primary" (click)="openConfirmDialog()">
               Open Confirm Dialog
             </button>
@@ -71,17 +108,7 @@
           <textarea 
             app-highlight
             [lang]="'typescript'">
-constructor(
-  private dialogService: DialogService,
-  private confirmDialog: ConfirmDialogService) {}
-
-openBasicDialog(): void {
-  this.dialogService.open(BasicDialogComponent, { size: DialogSize.Small });
-}
-
-openCustomDialog(): void {
-  this.dialogService.open(CustomDialogComponent, { autoHeight: false });
-}
+constructor(private confirmDialog: ConfirmDialogService) {}
 
 openConfirmDialog(): void {
   this.confirmDialog.confirm('This is a confirm dialog!');
