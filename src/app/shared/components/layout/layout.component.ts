@@ -32,6 +32,9 @@ export class LayoutComponent implements OnInit, OnChanges {
   autoCollapseMenu = true;
 
   @Input()
+  initialOpen = true;
+
+  @Input()
   drawerMode: 'over' | 'side' = 'side';
 
   @Input()
@@ -44,7 +47,7 @@ export class LayoutComponent implements OnInit, OnChanges {
     private breakpointObserver: BreakpointObserver) {}
 
   ngOnInit(): void {
-    if (this.drawerMode === 'over') {
+    if (!this.initialOpen) {
       this.layoutService.closeMenu();
     }
 
