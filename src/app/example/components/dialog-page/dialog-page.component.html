@@ -15,21 +15,15 @@
 
     <div class="example-container">
       <div class="title">
-        <h6>Standard Dialogs</h6>
+        <h6>Basic Dialog</h6>
       </div>
 
       <mat-tab-group [animationDuration]="'0ms'">
         <mat-tab label="Preview">
           <ng-template matTabContent>
             <div class="my-6">
-              <button mat-flat-button color="primary" (click)="openBasicDialog()">
-                Open Basic Dialog
-              </button>
-            </div>
-          
-            <div class="my-6">
-              <button mat-flat-button color="primary" (click)="openCustomDialog()">
-                Open Custom Dialog
+              <button mat-flat-button (click)="openBasicDialog()">
+                Show Basic Dialog
               </button>
             </div>
           </ng-template>
@@ -39,12 +33,8 @@
           <textarea
             app-highlight
             [lang]="'html'">
-            <button mat-flat-button color="primary" (click)="openBasicDialog()">
-              Open Basic Dialog
-            </button>
-
-            <button mat-flat-button color="primary" (click)="openCustomDialog()">
-              Open Custom Dialog
+            <button mat-flat-button (click)="openBasicDialog()">
+              Show Basic Dialog
             </button>
           </textarea>
         </mat-tab>
@@ -58,6 +48,43 @@ constructor(private dialogService: DialogService) {}
 openBasicDialog(): void {
   this.dialogService.open(BasicDialogComponent, { size: DialogSize.Small });
 }
+          </textarea>
+        </mat-tab>
+
+      </mat-tab-group>
+    </div>
+
+    <div class="example-container">
+      <div class="title">
+        <h6>Customised Dialog</h6>
+      </div>
+
+      <mat-tab-group [animationDuration]="'0ms'">
+        <mat-tab label="Preview">
+          <ng-template matTabContent>          
+            <div class="my-6">
+              <button mat-flat-button color="accent" (click)="openCustomDialog()">
+                Show Custom Dialog
+              </button>
+            </div>
+          </ng-template>
+        </mat-tab>
+
+        <mat-tab label="HTML">
+          <textarea
+            app-highlight
+            [lang]="'html'">
+            <button mat-flat-button color="accent" (click)="openCustomDialog()">
+              Show Custom Dialog
+            </button>
+          </textarea>
+        </mat-tab>
+
+        <mat-tab label="Typescript">
+          <textarea 
+            app-highlight
+            [lang]="'typescript'">
+constructor(private dialogService: DialogService) {}
 
 openCustomDialog(): void {
   this.dialogService.open(CustomDialogComponent, { autoHeight: false });
@@ -70,7 +97,7 @@ openCustomDialog(): void {
 
     <div class="example-container">
       <div class="title">
-        <h6>Confirm Dialogs</h6>
+        <h6>Confirm Dialog</h6>
       </div>
 
       <mat-tab-group [animationDuration]="'0ms'">
@@ -78,13 +105,7 @@ openCustomDialog(): void {
           <ng-template matTabContent>          
             <div class="my-6">
               <button mat-flat-button color="primary" (click)="openConfirmDialog()">
-                Open Confirm Dialog
-              </button>
-            </div>
-          
-            <div class="my-6">
-              <button mat-flat-button color="warn" (click)="openDeleteDialog()">
-                Open Delete Dialog
+                Show Confirm Dialog
               </button>
             </div>
           </ng-template>
@@ -95,11 +116,7 @@ openCustomDialog(): void {
             app-highlight
             [lang]="'html'">
             <button mat-flat-button color="primary" (click)="openConfirmDialog()">
-              Open Confirm Dialog
-            </button>
-
-            <button mat-flat-button color="warn" (click)="openDeleteDialog()">
-              Open Delete Dialog
+              Show Confirm Dialog
             </button>
           </textarea>
         </mat-tab>
@@ -113,6 +130,43 @@ constructor(private confirmDialog: ConfirmDialogService) {}
 openConfirmDialog(): void {
   this.confirmDialog.confirm('This is a confirm dialog!');
 }
+          </textarea>
+        </mat-tab>
+
+      </mat-tab-group>
+    </div>
+
+    <div class="example-container">
+      <div class="title">
+        <h6>Delete Dialog</h6>
+      </div>
+
+      <mat-tab-group [animationDuration]="'0ms'">
+        <mat-tab label="Preview">
+          <ng-template matTabContent>          
+            <div class="my-6">
+              <button mat-flat-button color="warn" (click)="openDeleteDialog()">
+                Show Delete Dialog
+              </button>
+            </div>
+          </ng-template>
+        </mat-tab>
+
+        <mat-tab label="HTML">
+          <textarea
+            app-highlight
+            [lang]="'html'">
+            <button mat-flat-button color="warn" (click)="openDeleteDialog()">
+              Show Delete Dialog
+            </button>
+          </textarea>
+        </mat-tab>
+
+        <mat-tab label="Typescript">
+          <textarea 
+            app-highlight
+            [lang]="'typescript'">
+constructor(private confirmDialog: ConfirmDialogService) {}
 
 openDeleteDialog(): void {
   this.confirmDialog.confirmDelete();
