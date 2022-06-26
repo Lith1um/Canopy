@@ -1,3 +1,4 @@
+export * from './auth.service';
 export * from './client-state.service';
 export * from './icon-registry.service';
 export * from './navigation.service';

@@ -43,6 +43,22 @@
         </div>
   
         <ng-container toolbarButtons>
+          <button mat-icon-button [matMenuTriggerFor]="menu">
+            <mat-icon>account_circle</mat-icon>
+          </button>
+          <mat-menu class="w-40" #menu="matMenu">
+            <div class="flex items-center hover:bg-transparent cursor-default" mat-menu-item disableRipple>
+              <span class="flex flex-col leading-none">
+                <span class="text-xs">Signed in as</span>
+                <span class="mt-0.5 text-sm font-medium">Alex Rayner</span>
+              </span>
+            </div>
+            <button mat-menu-item (click)="logout()">
+              <mat-icon class="mr-2">logout</mat-icon>
+              Log out
+            </button>
+          </mat-menu>
+
           <button mat-icon-button (click)="toggleSettingsMenu()">
             <mat-icon class="animate-spin-slow">settings</mat-icon>
           </button>

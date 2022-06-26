@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AuthService } from '@core/services';
 import { FormlyFieldConfig, FormlyFormOptions } from '@ngx-formly/core';
 import { fcPassword, fcTextInput } from '@shared/helpers';
 
@@ -10,11 +12,18 @@ import { fcPassword, fcTextInput } from '@shared/helpers';
 export class LoginComponent implements OnInit {
 
   fields: FormlyFieldConfig[] = [];
-  model: any = {};
+  model: any = {
+    username: 'AlexRayner',
+    password: 'Password1!'
+  };
   form = new FormGroup({});
   options: FormlyFormOptions = {};
 
-  rememberMe = false;
+  rememberMe = true;
+
+  constructor(
+    private router: Router,
+    private authService: AuthService) {}
 
   ngOnInit(): void {
     this.configureFields();
@@ -24,7 +33,7 @@ export class LoginComponent implements OnInit {
     this.fields = [
       fcTextInput(
         'username',
-        'Email Address',
+        'Email or Username',
         {
           required: true
         }
@@ -46,7 +55,8 @@ export class LoginComponent implements OnInit {
       return;
     }
 
-    alert('Form submitted');
+    this.authService.isAuthenticated = true;
+    this.router.navigate(['/app']);
   }
 
 }

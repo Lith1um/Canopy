@@ -1,5 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
-import { ClientStateService, DarkMode } from '@core/services';
+import { Router } from '@angular/router';
+import { AuthService, ClientStateService, DarkMode } from '@core/services';
 import { LayoutComponent } from '@shared/components';
 import { NavigationItemModel } from '@shared/models';
 
@@ -14,7 +15,10 @@ export class MainLayoutComponent {
 
   darkMode = DarkMode;
 
-  constructor(public clientState: ClientStateService) {}
+  constructor(
+    private router: Router,
+    private authService: AuthService,
+    public clientState: ClientStateService) {}
 
   items: NavigationItemModel[] = [
     {
@@ -78,6 +82,11 @@ export class MainLayoutComponent {
       ]
     }
   ];
+
+  logout(): void {
+    this.authService.isAuthenticated = false;
+    this.router.navigate(['/login']);
+  }
 
   toggleSettingsMenu(): void {
     this.settingsLayout.layoutService.toggleMenu();
