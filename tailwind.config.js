@@ -19,8 +19,8 @@ module.exports = {
           DEFAULT: { // this is for prose class
             css: {
               pre: {
-                backgroundColor: '#1e293b',
-                padding: '0 24px !important',
+                backgroundColor: theme("colors.slate.800"),
+                padding: '16px 24px !important',
                 margin: '24px 0 !important',
                 lineHeight: '24px !important'
               }

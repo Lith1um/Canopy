@@ -7,7 +7,7 @@ import {
 } from '@angular/core';
 
 // Types
-import { AlertType } from '@shared/models';
+import { AlertAppearance, AlertType } from '@shared/models';
 
 @Component({
   selector: 'app-alert',
@@ -22,12 +22,13 @@ export class AlertComponent {
   type: AlertType = 'error';
 
   @Input()
+  appearance: AlertAppearance = 'soft';
+
+  @Input()
   container = true;
 
   icons: {[level: string]: string} = {
     'primary': 'check_circle',
-    'accent': 'check_circle',
-    'warn': 'warning',
     'basic': 'check_circle',
     'info': 'info',
     'success': 'check_circle',
@@ -43,6 +44,7 @@ export class AlertComponent {
       'alert': true,
       'alert--no-container': !this.container,
       [`alert-level-${this.type}`]: this.type,
+      [`alert-appearance-${this.appearance}`]: this.appearance,
     };
   }
 

@@ -17,6 +17,7 @@
   
   html {
     @apply scroll-smooth;
+    font-feature-settings: 'salt';
   }
 
   app-root {
@@ -48,8 +49,10 @@
 @tailwind utilities;
 
 @import './assets/fonts/inter';
-@import 'app/scss/angular-material';
-@import 'app/scss/ngx-colors';
+@import 'app/scss/overrides/angular-material';
+@import 'app/scss/overrides/ngx-colors';
+@import 'app/scss/example-container';
+@import 'app/scss/overrides/highlightjs';
 
 @import '~@angular/material/theming';
 @include mat-core();
@@ -59,6 +62,12 @@ $my-custom-accent: mat-palette($mat-pink, 100, 500, A100);
 $my-custom-warn: mat-palette($mat-red);
 $my-custom-theme: mat-light-theme($my-custom-primary, $my-custom-accent, $my-custom-warn);
 @include angular-material-theme($my-custom-theme);
+
+$custom-typography: mat-typography-config(
+  $font-family: 'Inter Var'
+);
+
+@include angular-material-typography($custom-typography);
 
 html, body {
   height: 100%;

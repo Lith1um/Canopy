@@ -27,7 +27,8 @@ import {
   SimpleDialogComponent,
   ConfirmDialogComponent,
   ResizeIframeComponent,
-  AlertComponent
+  AlertComponent,
+  HighlightComponent
 } from '@shared/components';
 
 // Formly
@@ -83,6 +84,7 @@ import { ConfirmDialogService, DialogService, DialogSizeStateService } from '@sh
     SimpleDialogComponent,
     ResizeIframeComponent,
     AlertComponent,
+    HighlightComponent,
 
     TimeMaskDirective
   ],
@@ -118,7 +120,8 @@ import { ConfirmDialogService, DialogService, DialogSizeStateService } from '@sh
     DialogMaximiseComponent,
     SimpleDialogComponent,
     ResizeIframeComponent,
-    AlertComponent
+    AlertComponent,
+    HighlightComponent
   ],
   providers: [
     ConfirmDialogService,

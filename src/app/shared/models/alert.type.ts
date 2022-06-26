@@ -1,9 +1,11 @@
 export type AlertType =
   | 'primary'
-  | 'accent'
-  | 'warn'
   | 'basic'
   | 'info'
   | 'success'
   | 'warning'
   | 'error';
+
+export type AlertAppearance =
+  | 'border'
+  | 'soft';

@@ -3,3 +3,4 @@ export * from './formly-field-config-helpers';
 export * from './formly-form-helpers';
 export * from './formly-validation-messages';
 export * from './from-resize';
+export * from './highlight-code';

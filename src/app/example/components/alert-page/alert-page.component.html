@@ -1,133 +1,292 @@
 <app-page-container>
-  <article class="max-w-full prose dark:prose-dark lg:prose-xl prose-a:text-violet-600 mb-6">
+  <article class="max-w-full prose dark:prose-dark mb-6">
     <h2>Alerts</h2>
-    <p>The alert component is a simple way of showing a message to a user. check out the example below on how to use it:</p>
-    <pre>
-      <code>{{ alertCode }}</code>
-    </pre>
-    <p>It can be shown in a variety of types, as seen below:</p>
+    <p>The alert component is a simple way of showing a message to a user. It can be shown in a variety of types, as seen below:</p>
+
+    <div class="example-container">
+      <div class="title">
+        <h6>Soft (default)</h6>
+      </div>
+
+      <mat-tab-group [animationDuration]="'0ms'">
+        <mat-tab label="Preview">
+          <ng-template matTabContent>
+            <!-- Primary -->
+            <app-alert [type]="'primary'">
+              <span alertTitle>Primary alert</span>
+              Thank you for joining our newsletter
+            </app-alert>
+          
+            <!-- Basic -->
+            <app-alert [type]="'basic'">
+              <span alertTitle>Basic alert</span>
+              You have 3 new notifications
+            </app-alert>
+          
+            <!-- Info -->
+            <app-alert [type]="'info'">
+              <span alertTitle>Info alert</span>
+              This is a alert with an 'info' level severity
+            </app-alert>
+          
+            <!-- Success -->
+            <app-alert [type]="'success'">
+              <span alertTitle>Success alert</span>
+              This is a alert with a 'success' level severity
+            </app-alert>
+          
+            <!-- Warning -->
+            <app-alert [type]="'warning'">
+              <span alertTitle>Warning alert</span>
+              This is a alert with a 'warning' level severity
+            </app-alert>
+          
+            <!-- Error -->
+            <app-alert [type]="'error'">
+              <span alertTitle>Error alert</span>
+              This is a alert with an 'error' level severity
+            </app-alert>
+          </ng-template>
+        </mat-tab>
+
+        <mat-tab label="HTML">
+          <textarea
+            app-highlight
+            [lang]="'html'">
+            <!-- Primary -->
+            <app-alert [type]="'primary'">
+              <span alertTitle>Primary alert</span>
+              Thank you for joining our newsletter
+            </app-alert>
+
+            <!-- Basic -->
+            <app-alert [type]="'basic'">
+              <span alertTitle>Basic alert</span>
+              You have 3 new notifications
+            </app-alert>
+
+            <!-- Info -->
+            <app-alert [type]="'info'">
+              <span alertTitle>Info alert</span>
+              This is a alert with an 'info' level severity
+            </app-alert>
+
+            <!-- Success -->
+            <app-alert [type]="'success'">
+              <span alertTitle>Success alert</span>
+              This is a alert with a 'success' level severity
+            </app-alert>
+
+            <!-- Warning -->
+            <app-alert [type]="'warning'">
+              <span alertTitle>Warning alert</span>
+              This is a alert with a 'warning' level severity
+            </app-alert>
+
+            <!-- Error -->
+            <app-alert [type]="'error'">
+              <span alertTitle>Error alert</span>
+              This is a alert with an 'error' level severity
+            </app-alert>
+          </textarea>
+        </mat-tab>
+      </mat-tab-group>
+    </div>
+
+    <div class="example-container">
+      <div class="title">
+        <h6>Border</h6>
+      </div>
+
+      <mat-tab-group [animationDuration]="'0ms'">
+        <mat-tab label="Preview">
+          <ng-template matTabContent>
+            <!-- Primary -->
+            <app-alert [type]="'primary'" [appearance]="'border'">
+              <span alertTitle>Primary alert</span>
+              Thank you for joining our newsletter
+            </app-alert>
+          
+            <!-- Basic -->
+            <app-alert [type]="'basic'" [appearance]="'border'">
+              <span alertTitle>Basic alert</span>
+              You have 3 new notifications
+            </app-alert>
+          
+            <!-- Info -->
+            <app-alert [type]="'info'" [appearance]="'border'">
+              <span alertTitle>Info alert</span>
+              This is a alert with an 'info' level severity
+            </app-alert>
+          
+            <!-- Success -->
+            <app-alert [type]="'success'" [appearance]="'border'">
+              <span alertTitle>Success alert</span>
+              This is a alert with a 'success' level severity
+            </app-alert>
+          
+            <!-- Warning -->
+            <app-alert [type]="'warning'" [appearance]="'border'">
+              <span alertTitle>Warning alert</span>
+              This is a alert with a 'warning' level severity
+            </app-alert>
+          
+            <!-- Error -->
+            <app-alert [type]="'error'" [appearance]="'border'">
+              <span alertTitle>Error alert</span>
+              This is a alert with an 'error' level severity
+            </app-alert>
+          </ng-template>
+        </mat-tab>
+
+        <mat-tab label="HTML">
+          <textarea
+            app-highlight
+            [lang]="'html'">
+            <!-- Primary -->
+            <app-alert [type]="'primary'" [appearance]="'border'">
+              <span alertTitle>Primary alert</span>
+              Thank you for joining our newsletter
+            </app-alert>
+
+            <!-- Basic -->
+            <app-alert [type]="'basic'" [appearance]="'border'">
+              <span alertTitle>Basic alert</span>
+              You have 3 new notifications
+            </app-alert>
+
+            <!-- Info -->
+            <app-alert [type]="'info'" [appearance]="'border'">
+              <span alertTitle>Info alert</span>
+              This is a alert with an 'info' level severity
+            </app-alert>
+
+            <!-- Success -->
+            <app-alert [type]="'success'" [appearance]="'border'">
+              <span alertTitle>Success alert</span>
+              This is a alert with a 'success' level severity
+            </app-alert>
+
+            <!-- Warning -->
+            <app-alert [type]="'warning'" [appearance]="'border'">
+              <span alertTitle>Warning alert</span>
+              This is a alert with a 'warning' level severity
+            </app-alert>
+
+            <!-- Error -->
+            <app-alert [type]="'error'" [appearance]="'border'">
+              <span alertTitle>Error alert</span>
+              This is a alert with an 'error' level severity
+            </app-alert>
+          </textarea>
+        </mat-tab>
+      </mat-tab-group>
+    </div>
+
+    <div class="example-container">
+      <div class="title">
+        <div>
+          <h6>No container</h6>
+        </div>
+      </div>
+
+      <mat-tab-group [animationDuration]="'0ms'">
+        <mat-tab label="Preview">
+          <ng-template matTabContent>
+            <!-- Primary -->
+            <div class="my-6">
+              <app-alert [type]="'primary'" [container]="false">
+                <span alertTitle>Primary alert</span>
+                Thank you for joining our newsletter
+              </app-alert>
+            </div>
+
+            <!-- Basic -->
+            <div class="my-6">
+              <app-alert [type]="'basic'" [container]="false">
+                <span alertTitle>Basic alert</span>
+                You have 3 new notifications
+              </app-alert>
+            </div>
+
+            <!-- Info -->
+            <div class="my-6">
+              <app-alert [type]="'info'" [container]="false">
+                <span alertTitle>Info alert</span>
+                This is a alert with an 'info' level severity
+              </app-alert>
+            </div>
+
+            <!-- Success -->
+            <div class="my-6">
+              <app-alert [type]="'success'" [container]="false">
+                <span alertTitle>Success alert</span>
+                This is a alert with a 'success' level severity
+              </app-alert>
+            </div>
+
+            <!-- Warning -->
+            <div class="my-6">
+              <app-alert [type]="'warning'" [container]="false">
+                <span alertTitle>Warning alert</span>
+                This is a alert with a 'warning' level severity
+              </app-alert>
+            </div>
+
+            <!-- Error -->
+            <div class="my-6">
+              <app-alert [type]="'error'" [container]="false">
+                <span alertTitle>Error alert</span>
+                This is a alert with an 'error' level severity
+              </app-alert>
+            </div>
+          </ng-template>
+        </mat-tab>
+
+        <mat-tab label="HTML">
+          <textarea
+            app-highlight
+            [lang]="'html'">
+            <!-- Primary -->
+            <app-alert [type]="'primary'" [container]="false">
+              <span alertTitle>Primary alert</span>
+              Thank you for joining our newsletter
+            </app-alert>
+
+            <!-- Basic -->
+            <app-alert [type]="'basic'" [container]="false">
+              <span alertTitle>Basic alert</span>
+              You have 3 new notifications
+            </app-alert>
+
+            <!-- Info -->
+            <app-alert [type]="'info'" [container]="false">
+              <span alertTitle>Info alert</span>
+              This is a alert with an 'info' level severity
+            </app-alert>
+
+            <!-- Success -->
+            <app-alert [type]="'success'" [container]="false">
+              <span alertTitle>Success alert</span>
+              This is a alert with a 'success' level severity
+            </app-alert>
+
+            <!-- Warning -->
+            <app-alert [type]="'warning'" [container]="false">
+              <span alertTitle>Warning alert</span>
+              This is a alert with a 'warning' level severity
+            </app-alert>
+
+            <!-- Error -->
+            <app-alert [type]="'error'" [container]="false">
+              <span alertTitle>Error alert</span>
+              This is a alert with an 'error' level severity
+            </app-alert>
+          </textarea>
+        </mat-tab>
+      </mat-tab-group>
+    </div>
+
   </article>
-
-  <div class="px-0 md:px-4 lg:px-8 mb-8">
-    <!-- Primary -->
-    <app-alert [type]="'primary'">
-      <span alertTitle>Primary alert</span>
-      Thank you for joining our newsletter
-    </app-alert>
-  
-    <!-- Accent -->
-    <app-alert [type]="'accent'">
-      <span alertTitle>Accent alert</span>
-      Your changes has been saved
-    </app-alert>
-  
-    <!-- Warn -->
-    <app-alert [type]="'warn'">
-      <span alertTitle>Warn alert</span>
-      Fill all required fields to proceed next step
-    </app-alert>
-  
-    <!-- Basic -->
-    <app-alert [type]="'basic'">
-      <span alertTitle>Basic alert</span>
-      You have 3 new notifications
-    </app-alert>
-  
-    <!-- Info -->
-    <app-alert [type]="'info'">
-      <span alertTitle>Info alert</span>
-      This is a alert with an 'info' level severity
-    </app-alert>
-  
-    <!-- Success -->
-    <app-alert [type]="'success'">
-      <span alertTitle>Success alert</span>
-      This is a alert with a 'success' level severity
-    </app-alert>
-  
-    <!-- Warning -->
-    <app-alert [type]="'warning'">
-      <span alertTitle>Warning alert</span>
-      This is a alert with a 'warning' level severity
-    </app-alert>
-  
-    <!-- Error -->
-    <app-alert [type]="'error'">
-      <span alertTitle>Error alert</span>
-      This is a alert with an 'error' level severity
-    </app-alert>
-  </div>
-
-  <article class="max-w-full prose dark:prose-dark lg:prose-xl prose-a:text-violet-600 mb-6">
-    <h4>Without a container</h4>
-    <p>The alert component can alternatively be shown without its container:</p>
-  </article>
-
-  
-  <div class="px-0 md:px-4 lg:px-8">
-    <!-- Primary -->
-    <div class="my-6">
-      <app-alert [type]="'primary'" [container]="false">
-        <span alertTitle>Primary alert</span>
-        Thank you for joining our newsletter
-      </app-alert>
-    </div>
-
-    <!-- Accent -->
-    <div class="my-6">
-      <app-alert [type]="'accent'" [container]="false">
-        <span alertTitle>Accent alert</span>
-        Your changes has been saved
-      </app-alert>
-    </div>
-
-    <!-- Warn -->
-    <div class="my-6">
-      <app-alert [type]="'warn'" [container]="false">
-        <span alertTitle>Warn alert</span>
-        Fill all required fields to proceed next step
-      </app-alert>
-    </div>
-
-    <!-- Basic -->
-    <div class="my-6">
-      <app-alert [type]="'basic'" [container]="false">
-        <span alertTitle>Basic alert</span>
-        You have 3 new notifications
-      </app-alert>
-    </div>
-
-    <!-- Info -->
-    <div class="my-6">
-      <app-alert [type]="'info'" [container]="false">
-        <span alertTitle>Info alert</span>
-        This is a alert with an 'info' level severity
-      </app-alert>
-    </div>
-
-    <!-- Success -->
-    <div class="my-6">
-      <app-alert [type]="'success'" [container]="false">
-        <span alertTitle>Success alert</span>
-        This is a alert with a 'success' level severity
-      </app-alert>
-    </div>
-
-    <!-- Warning -->
-    <div class="my-6">
-      <app-alert [type]="'warning'" [container]="false">
-        <span alertTitle>Warning alert</span>
-        This is a alert with a 'warning' level severity
-      </app-alert>
-    </div>
-
-    <!-- Error -->
-    <div class="my-6">
-      <app-alert [type]="'error'" [container]="false">
-        <span alertTitle>Error alert</span>
-        This is a alert with an 'error' level severity
-      </app-alert>
-    </div>
-  </div>
 
 </app-page-container>

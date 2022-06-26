@@ -1,0 +1,48 @@
+/* ----------------------------------------------------------------------------------------------------- */
+/*  @ Example viewer
+/* ----------------------------------------------------------------------------------------------------- */
+.example-container {
+  display: flex;
+  flex-direction: column;
+  margin: 32px 0;
+  overflow: hidden;
+  @apply rounded-2xl shadow bg-white dark:bg-slate-800;
+
+  .title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 72px;
+    min-height: 72px;
+    max-height: 72px;
+    padding: 0 40px;
+
+    h6 {
+      @apply text-sm;
+      font-weight: 700;
+    }
+
+    .controls {
+      display: flex;
+      align-items: center;
+
+      > * + * {
+        margin-left: 8px;
+      }
+    }
+  }
+
+  mat-tab-group {
+
+    .mat-tab-body-content {
+      @apply p-6;
+
+      .highlight {
+
+        pre {
+          @apply m-0 px-5 rounded-none #{'!important'};
+        }
+      }
+    }
+  }
+}

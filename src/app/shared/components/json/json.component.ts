@@ -86,7 +86,7 @@ export class JsonComponent implements OnInit, OnChanges {
     return this.showLineNumbers
       ? obj.replace(
         /^/gm,
-        () => `<span class="pl-3 select-none" >${String(line++).padEnd(this.padding)}</span>`
+        () => `<span class="select-none" >${String(line++).padEnd(this.padding)}</span>`
       )
       : obj;
   }

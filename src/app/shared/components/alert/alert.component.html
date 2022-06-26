@@ -1,5 +1,11 @@
 <div [ngClass]="classList">
 
+  <!-- Border -->
+  <div
+    class="alert-border"
+    *ngIf="appearance === 'border'">
+  </div>
+
   <!-- Icon -->
   <div class="alert-icon">
     <mat-icon>{{ icons[type] }}</mat-icon>

@@ -1,5 +1,5 @@
 <app-page-container>
-  <article class="max-w-full prose dark:prose-dark lg:prose-xl mb-6">
+  <article class="max-w-full prose dark:prose-dark mb-6">
     <h2>Dialogs</h2>
     <p>This section contains example dialogs that can be configured using a dialog service. Various options can be configured, such as:</p>
     <ul>
@@ -9,38 +9,92 @@
       <li>Header/Footer buttons</li>
       <li>Custom content</li>
     </ul>
-    <p>See an example below for showing a dialog:</p>
-    <pre>
-      <code>{{ dialogCode }}</code>
-    </pre>
-    <h4>Example Dialogs</h4>
+    <p>See the examples below for showing a dialog:</p>
+
+    <div class="example-container">
+      <div class="title">
+        <h6>Example Dialogs</h6>
+      </div>
+
+      <mat-tab-group [animationDuration]="'0ms'">
+        <mat-tab label="Preview">
+          <ng-template matTabContent>
+            <div class="my-6">
+              <button mat-flat-button color="primary" (click)="openBasicDialog()">
+                Open Basic Dialog
+              </button>
+            </div>
+          
+            <div class="my-6">
+              <button mat-flat-button color="primary" (click)="openCustomDialog()">
+                Open Custom Dialog
+              </button>
+            </div>
+          
+            <div class="my-6">
+              <button mat-flat-button color="primary" (click)="openConfirmDialog()">
+                Open Confirm Dialog
+              </button>
+            </div>
+          
+            <div class="my-6">
+              <button mat-flat-button color="warn" (click)="openDeleteDialog()">
+                Open Delete Dialog
+              </button>
+            </div>
+          </ng-template>
+        </mat-tab>
+
+        <mat-tab label="HTML">
+          <textarea
+            app-highlight
+            [lang]="'html'">
+            <button mat-flat-button color="primary" (click)="openBasicDialog()">
+              Open Basic Dialog
+            </button>
+
+            <button mat-flat-button color="primary" (click)="openCustomDialog()">
+              Open Custom Dialog
+            </button>
+
+            <button mat-flat-button color="primary" (click)="openConfirmDialog()">
+              Open Confirm Dialog
+            </button>
+
+            <button mat-flat-button color="warn" (click)="openDeleteDialog()">
+              Open Delete Dialog
+            </button>
+          </textarea>
+        </mat-tab>
+
+        <mat-tab label="Typescript">
+          <textarea 
+            app-highlight
+            [lang]="'typescript'">
+constructor(
+  private dialogService: DialogService,
+  private confirmDialog: ConfirmDialogService) {}
+
+openBasicDialog(): void {
+  this.dialogService.open(BasicDialogComponent, { size: DialogSize.Small });
+}
+
+openCustomDialog(): void {
+  this.dialogService.open(CustomDialogComponent, { autoHeight: false });
+}
+
+openConfirmDialog(): void {
+  this.confirmDialog.confirm('This is a confirm dialog!');
+}
+
+openDeleteDialog(): void {
+  this.confirmDialog.confirmDelete();
+}
+          </textarea>
+        </mat-tab>
+
+      </mat-tab-group>
+    </div>
   </article>
 
-  <div class="my-4">
-    <p class="mb-3">Basic Dialog</p>
-    <button mat-flat-button color="primary" (click)="openBasicDialog()">
-      Open Basic Dialog
-    </button>
-  </div>
-
-  <div class="my-4">
-    <p class="mb-3">Custom Dialog</p>
-    <button mat-flat-button color="primary" (click)="openCustomDialog()">
-      Open Custom Dialog
-    </button>
-  </div>
-
-  <div class="my-4">
-    <p class="mb-3">Confirm Dialog</p>
-    <button mat-flat-button color="primary" (click)="openConfirmDialog()">
-      Open Confirm Dialog
-    </button>
-  </div>
-
-  <div class="my-4">
-    <p class="mb-3">Delete Dialog</p>
-    <button mat-flat-button color="warn" (click)="openDeleteDialog()">
-      Open Delete Dialog
-    </button>
-  </div>
 </app-page-container>

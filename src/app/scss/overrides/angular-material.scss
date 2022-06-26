@@ -897,7 +897,7 @@
 .mat-dialog-override {
     mat-dialog-container,
     .mat-dialog-container {
-        @apply p-0 rounded-lg dark:bg-slate-700 dark:text-gray-100;
+        @apply p-0 rounded-xl dark:bg-slate-800 dark:text-gray-100;
         height: unset;
 
         > :first-child {
@@ -970,8 +970,68 @@
     @apply m-0 -ml-1 #{'!important'};
 }
 
-.mat-tab-body-wrapper {
-    @apply flex-1 #{'!important'};
+/* ----------------------------------------------------------------------------------------------------- */
+/*  @ Tabs
+/* ----------------------------------------------------------------------------------------------------- */
+.mat-tab-group {
+
+  /* No header */
+  &.mat-no-header {
+
+    .mat-tab-header {
+      height: 0 !important;
+      max-height: 0 !important;
+      border: none !important;
+      visibility: hidden !important;
+      opacity: 0 !important;
+    }
+  }
+
+  .mat-tab-header {
+    border-bottom: none !important;
+
+    .mat-tab-label-container {
+      padding: 0 24px;
+
+      .mat-tab-list {
+
+        .mat-tab-labels {
+
+          .mat-tab-label {
+            min-width: 0 !important;
+            height: 40px !important;
+            padding: 0 20px !important;
+            border-radius: 9999px !important;
+            @apply text-gray-500 dark:text-gray-400;
+
+            &.mat-tab-label-active {
+              @apply bg-gray-700 bg-opacity-10 dark:bg-gray-50 dark:bg-opacity-10 text-gray-900 dark:text-gray-100 #{'!important'};
+            }
+
+            + .mat-tab-label {
+              margin-left: 4px;
+            }
+
+            .mat-tab-label-content {
+              line-height: 20px;
+            }
+          }
+        }
+
+        .mat-ink-bar {
+          display: none !important;
+        }
+      }
+    }
+  }
+
+  .mat-tab-body-content {
+    padding: 24px;
+  }
+}
+
+.mat-tab-label {
+  opacity: 1 !important;
 }
 
 .mat-select-panel,

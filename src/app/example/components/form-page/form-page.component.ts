@@ -28,17 +28,6 @@ export class FormPageComponent implements OnInit {
 
   formClass = 'mat-default';
 
-  textInputCode = `
-fcTextInput(
-  'text', // form control name
-  'Text', // label to display
-  {
-    // config options
-    maxLength: 10,
-    required: true
-  }
-)`;
-
   get saveDisabled(): boolean {
     const edited = this.form.dirty && this.form.touched;
     const valid = this.form.valid;
@@ -160,7 +149,4 @@ fcTextInput(
     ];
   }
 
-  save(): void {
-    console.log('model', this.form.getRawValue());
-  }
 }

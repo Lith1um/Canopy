@@ -1,25 +1,152 @@
 <app-page-container>
-  <article class="max-w-full prose dark:prose-dark lg:prose-xl mb-6">
+  <article class="max-w-full prose dark:prose-dark mb-6">
     <h2>Forms</h2>
     <p>This section contains example form fields that can be configured out the box. A custom wrapper and styling system on top of ngx-formly provides an easy to use set of helper functions that configure your forms through config alone.</p>
     <p>See an example below for a text field:</p>
-    <pre>
-      <code>{{ textInputCode }}</code>
-    </pre>
-    <h4>Example Form</h4>
-  </article>
-  <p class="mb-3">Available form styles:</p>
-  <mat-button-toggle-group class="h-[42px] items-center mb-8" [(ngModel)]="formClass">
-    <mat-button-toggle value="mat-default">Default</mat-button-toggle>
-    <mat-button-toggle value="mat-dense">Dense</mat-button-toggle>
-    <mat-button-toggle value="mat-inline">Inline</mat-button-toggle>
-  </mat-button-toggle-group>
-  <div class="mb-4" [ngClass]="formClass">
-    <form [formGroup]="form">
-      <formly-form [model]="model" [fields]="fields" [options]="options" [form]="form"></formly-form>
-    </form>
-  </div>
 
-  <p class="mb-3">Resulting form value (updates as you edit the form):</p>
-  <app-json [json]="form.getRawValue()"></app-json>
+    <div class="example-container">
+      <div class="title">
+        <h6>Example</h6>
+      </div>
+
+      <mat-tab-group [animationDuration]="'0ms'">
+        <mat-tab label="Preview">
+          <ng-template matTabContent>
+            <mat-button-toggle-group class="h-[42px] items-center mb-8" [(ngModel)]="formClass">
+              <mat-button-toggle value="mat-default">Default</mat-button-toggle>
+              <mat-button-toggle value="mat-dense">Dense</mat-button-toggle>
+              <mat-button-toggle value="mat-inline">Inline</mat-button-toggle>
+            </mat-button-toggle-group>
+            <div [ngClass]="formClass">
+              <form [formGroup]="form">
+                <formly-form [model]="model" [fields]="fields" [options]="options" [form]="form"></formly-form>
+              </form>
+            </div>
+          </ng-template>
+        </mat-tab>
+
+        <mat-tab label="HTML">
+          <textarea
+            app-highlight
+            [lang]="'html'">
+            <form [formGroup]="form">
+              <formly-form [model]="model" [fields]="fields" [options]="options" [form]="form"></formly-form>
+            </form>
+          </textarea>
+        </mat-tab>
+
+        <mat-tab label="Typescript">
+          <textarea 
+            app-highlight
+            [lang]="'typescript'">
+            fields: FormlyFieldConfig[] = [];
+            model: any = {};
+            form = new FormGroup({});
+            options: FormlyFormOptions = {};
+
+            this.fields = [
+              fcTextInput(
+                'text',
+                'Text',
+                {
+                  maxLength: 10,
+                  required: true
+                }
+              ),
+              fcTextareaInput(
+                'textarea',
+                'Textarea',
+                {}
+              ),
+              fcGridRow(
+                fcColorPicker(
+                  'colour',
+                  'Colour',
+                  {
+                    required: true
+                  }
+                ),
+                fcSelect(
+                  'select',
+                  'Select',
+                  {
+                    placeholder: 'Select placeholder',
+                    options: [
+                      { id: 1, name: 'Option 1' },
+                      { id: 2, name: 'Option 2' },
+                      { id: 3, name: 'Option 3' },
+                      { id: 4, name: 'Option 4' },
+                      { id: 5, name: 'Option 5' }
+                    ]
+                  }
+                ),
+                fcCheckbox(
+                  'checkbox',
+                  'Checkbox',
+                  {}
+                )
+              ),
+              fcGridRow(
+                fcDatepicker(
+                  'dateDisabled',
+                  'Date disabled',
+                  {
+                    disabled: true
+                  }
+                ),
+                fcDatepicker(
+                  'date',
+                  'Date',
+                  {
+                    placeholder: 'DD/MM/YYYY',
+                    hintText: 'some text to check colours in dark mode'
+                  }
+                )
+              ),
+              fcGridRow(
+                fcTimeInput(
+                  'time',
+                  'Time',
+                  {}
+                ),
+                fcToggle(
+                  'toggle',
+                  'Toggle',
+                  {}
+                )
+              ),
+              fcGridRow(
+                fcNumber(
+                  'number',
+                  'Number',
+                  {
+                    required: true
+                  }
+                )
+              ),
+              fcButtonToggle(
+                'button-toggle',
+                'Button Toggle',
+                {
+                  options: [
+                    { id: 1, name: 'Mon' },
+                    { id: 2, name: 'Tue' },
+                    { id: 3, name: 'Wed' },
+                    { id: 4, name: 'Thu' },
+                    { id: 5, name: 'Fri' },
+                    { id: 6, name: 'Sat' },
+                    { id: 7, name: 'Sun' }
+                  ]
+                }
+              )
+            ];
+          </textarea>
+        </mat-tab>
+
+      </mat-tab-group>
+    </div>
+    
+    <p>Resulting form value (updates as you edit the form):</p>
+    <app-json [json]="form.getRawValue()"></app-json>
+  </article>
 </app-page-container>

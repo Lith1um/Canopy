@@ -29,14 +29,7 @@ export class MainLayoutComponent {
       type: 'group',
       children: [
         {
-          id: 'form-page',
-          title: 'Forms',
-          type: 'item',
-          url: 'form-page',
-          matIcon: 'edit_note'
-        },
-        {
-          id: 'login-page',
+          id: 'login',
           title: 'Login Screen',
           type: 'item',
           url: 'login-page',
@@ -45,18 +38,33 @@ export class MainLayoutComponent {
       ]
     },
     {
-      id: 'pages',
-      title: 'Pages',
+      id: 'ui',
+      title: 'User Interface',
       subtitle: 'Building blocks of the UI & UX',
       type: 'group',
       children: [
+        {
+          id: 'form-page',
+          title: 'Forms',
+          type: 'item',
+          url: 'form-page',
+          matIcon: 'edit_note'
+        },
         {
           id: 'dialogs',
           title: 'Dialogs',
           type: 'item',
           url: 'dialogs',
           matIcon: 'web_asset'
-        },
+        }
+      ]
+    },
+    {
+      id: 'components',
+      title: 'Components',
+      subtitle: 'UI elements for all your needs',
+      type: 'group',
+      children: [
         {
           id: 'alerts',
           title: 'Alerts',

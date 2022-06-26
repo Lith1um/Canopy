@@ -1,3 +1,4 @@
+export * from './alert/alert.component';
 export * from './color-picker/color-picker.component';
 export * from './confirm-dialog/confirm-dialog.component';
 export * from './dialog-footer/dialog-footer.component';
@@ -8,8 +9,8 @@ export * from './formly/formly-color-type/formly-color-type.component';
 export * from './formly/formly-repeat-section-type/formly-repeat-section-type.component';
 export * from './formly/formly-textarea-type/formly-textarea-type.component';
 export * from './formly/formly-time-type/formly-time-type.component';
+export * from './highlight/highlight.component';
 export * from './json/json.component';
-export * from './alert/alert.component';
 export * from './navigation/horizontal/horizontal.component';
 export * from './navigation/horizontal/components/basic/basic.component';
 export * from './navigation/horizontal/components/branch/branch.component';

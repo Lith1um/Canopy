@@ -8,16 +8,6 @@ import { CustomDialogComponent } from './custom-dialog/custom-dialog.component';
   templateUrl: './dialog-page.component.html'
 })
 export class DialogPageComponent {
-
-  dialogCode = `
-this.dialogService.open(
-  BasicDialogComponent, // Component to mount in the dialog window
-  {
-    data: {},
-    size: DialogSize.Medium,
-    autoHeight: false
-  }
-);`;
   
   constructor(
     private dialogService: DialogService,

@@ -11,9 +11,9 @@ A project designed to make building new apps in angular as easy as possible.
  - ngx-webstorage
  - Lodash
  - ngx-Colours
+ - Highlight.js
 
 ## To-Do
 
  - auth support?
  - crud API support?
- - spectator/testing library
